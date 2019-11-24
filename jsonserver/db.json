@@ -1,0 +1,252 @@
+{
+    "linear-gauge" : {
+        "minValue": 0,
+        "maxValue": 100,
+        "value": 50,
+        "previousValue": 70,
+        "units": "unresolved incidents"
+    },
+    "number-cards": [
+        {
+          "name": "Malicious Access",
+          "value": 0
+        },
+        {
+          "name": "Dangerous Access",
+          "value": 379
+        },
+        {
+          "name": "Unknown Access",
+          "value": 0
+        },
+        {
+          "name": "Clean Access",
+          "value": 31004873
+        },
+        {
+          "name": "Blocked URL",
+          "value": 28
+        }
+      ],
+    "bubble-chart" : [
+        {
+            "name": "Software",
+            "series": [
+            {
+                "name": "Brute force",
+                "x": "Brute force",
+                "y": 7,
+                "r": 80.4
+            },
+            {
+                "name": "Suspicious activity",
+                "x": "Suspicious activity",
+                "y": 2,
+                "r": 78
+            },
+            {
+                "name": "Policy vialation",
+                "x": "Policy vialation",
+                "y": 4,
+                "r": 79
+            }
+            ]
+        },
+        {
+            "name": "Hardware",
+            "series": [
+            {
+                "name": "Brute force",
+                "x": "Brute force",
+                "y": 8,
+                "r": 310
+            },
+            {
+                "name": "Suspicious activity",
+                "x": "Suspicious activity",
+                "y": 5,
+                "r": 283
+            },
+            {
+                "name": "Policy vialation",
+                "x": "Policy vialation",
+                "y": 7,
+                "r": 253
+            }
+            ]
+        },
+        {
+            "name": "Network",
+            "series": [
+            {
+                "name": "Brute force",
+                "x": "Brute force",
+                "y": 2,
+                "r": 63
+            },
+            {
+                "name": "Suspicious activity",
+                "x": "Suspicious activity",
+                "y": 1,
+                "r": 59.4
+            },
+            {
+                "name": "Policy vialation",
+                "x": "Policy vialation",
+                "y": 4,
+                "r": 56.9
+            }
+            ]
+        },
+        {
+            "name": "Database",
+            "series": [
+            {
+                "name": "Brute force",
+                "x": "Brute force",
+                "y": 5,
+                "r": 62.7
+            },
+            {
+                "name": "Suspicious activity",
+                "x": "Suspicious activity",
+                "y": 3,
+                "r": 58.9
+            },
+            {
+                "name": "Policy vialation",
+                "x": "Policy vialation",
+                "y": 6,
+                "r": 57.1
+            }
+            ]
+        },
+        {
+            "name": "Other",
+            "series": [
+                {
+                "name": "Brute force",
+                "x": "Brute force",
+                "y": 6,
+                "r": 62.7
+                },
+                {
+                "name": "Suspicious activity",
+                "x": "Suspicious activity",
+                "y": 8,
+                "r": 70.3
+                },
+                {
+                "name": "Policy vialation",
+                "x": "Policy vialation",
+                "y": 2,
+                "r": 150
+                }
+            ]
+        }
+    ],
+    "incidents-by-categories": [
+        {
+            "name": "Software",
+            "value": 520
+        },
+        {
+            "name": "Hardware",
+            "value": 45
+        },
+        {
+            "name": "Network",
+            "value": 89
+        },
+        {
+            "name": "Database",
+            "value": 270
+        },
+        {
+            "name": "Other",
+            "value": 60
+        }
+    ],
+    "attacks" : [
+        {
+          "name": "Attacks",
+          "series": [
+            {
+              "name": "24/11",
+              "value": 6
+            },
+            {
+              "name": "30/11",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "name": "Visits",
+          "series": [
+            {
+              "name": "24/11",
+              "value": 23
+            },
+            {
+              "name": "30/11",
+              "value": 38
+            }
+          ]
+        }
+    ],
+    "visits" : [
+        {
+          "name": "2016",
+          "series": [
+            {
+                "name": "Attacks",
+                "value": 33
+            },
+            {
+                "name": "Visits",
+                "value": 121
+            }
+          ]
+        },
+        {
+            "name": "2017",
+            "series": [
+                {
+                "name": "Attacks",
+                "value": 87
+                },
+                {
+                "name": "Visits",
+                "value": 181
+                }
+            ]
+            },
+            {
+                "name": "2018",
+                "series": [
+                {
+                    "name": "Attacks",
+                    "value": 64
+                },
+                {
+                    "name": "Visits",
+                    "value": 202
+                }
+                ]
+            },
+            {
+                "name": "2019",
+                "series": [
+                    {
+                        "name": "Attacks",
+                        "value": 44
+                    },
+                    {
+                        "name": "Visits",
+                        "value": 211
+                    }
+                ]
+            }
+      ]
+}

@@ -1,0 +1,158 @@
+<div class="row">
+    <div class="col-3">           
+        <div class="chart-div"> 
+            <div class="chart-parent" style="height:300px">
+                <!-- LINEAR GAUGE -->    
+                <ngx-charts-linear-gauge
+                    [view]="view"
+                    [scheme]="colorSchemeGauge"
+                    [value]="linearGauge.value"
+                    [previousValue]="linearGauge.previousValue" 
+                    [min]="linearGauge.minValue"
+                    [max]="linearGauge.maxValue"
+                    [units]="linearGauge.units">
+                </ngx-charts-linear-gauge>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="chart-div">
+            <div class="chart-heading">
+                Incidents by category
+            </div>
+            <div class="chart-parent" style="height:250px">
+                <!-- PIE CHART -->       
+                <ngx-charts-pie-chart
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [results]="pieChartData"
+                    [legend]="false"
+                    [explodeSlices]="true"
+                    [labels]="true"
+                    [doughnut]="true"
+                    [gradient]="true">
+                </ngx-charts-pie-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+            <div class="chart-div">
+                <div class="chart-heading">
+                    User access summary
+                </div>
+                <div class="chart-parent" style="height:250px">  
+                <!-- NUMBER CARDS --> 
+                <ngx-charts-number-card
+                    [scheme]="colorSchemeCards"
+                    [results]="numberCardsData">
+                </ngx-charts-number-card> 
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="chart-div">
+    <div class="chart-heading">
+        Incident severity
+    </div>
+    <div class="row">
+        <div class="col-12 chart-parent" style="height:320px">
+            <ngx-charts-bubble-chart
+                [results]="bubbleChartData"
+                [legend]="bubbleLegend"
+                [legendTitle]="bubbleLegendTitle"
+                [xAxis]="true"
+                [yAxis]="true"
+                [legendPosition]="right"
+                [showXAxisLabel]="bubbleShowXAxisLabel"
+                [showYAxisLabel]="bubbleShowYAxisLabel"
+                [xAxisLabel]="bubbleXAxisLabel"
+                [yAxisLabel]="bubbleYAxisLabel"
+                [scheme]="colorScheme"
+                [schemeType]="bubbleSchemeType"
+                [roundDomains]="bubbleRoundDomains"
+                [tooltipDisabled]="bubbleTooltipDisabled"
+                [minRadius]="bubbleMinRadius"   
+                [maxRadius]="bubbleMaxRadius"
+                [autoScale]="true"
+                (window:resize)="onResize($event)"
+                >
+            </ngx-charts-bubble-chart>
+        </div>
+    </div>
+</div>
+    
+<div class="row">
+    <div class="col-6">             
+        <div class="chart-div"> 
+            <div class="chart-heading">
+                Recent Attack severity
+            </div>
+            <div class="chart-parent" style="height:250px">
+                <!-- STACKED AREA CHART --> 
+                <ngx-charts-area-chart-stacked
+                    [view]="view"
+                    [scheme]="colorSchemeEvents"
+                    [results]="stackAreaData"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="false"
+                    [xAxisLabel]="xAxisLabelStacked"
+                    [yAxisLabel]="yAxisLabelStacked">
+                </ngx-charts-area-chart-stacked>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">        
+        <div class="chart-div"> 
+            <div class="chart-heading">
+                Annual Attack severity
+            </div>
+            <div class="chart-parent" style="height:250px; padding-left: 5px;">
+                <ngx-charts-bar-vertical-stacked
+                    class="chart-container"
+                    [view]="view"
+                    [scheme]="colorSchemeEvents"
+                    [schemeType]="schemeType"
+                    [results]="verticalBarChart"
+                    [animations]="animations"
+                    [gradient]="gradient"
+                    [tooltipDisabled]="tooltipDisabled"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="false"
+                    [legendTitle]=""
+                    [legendPosition]="legendPosition"
+                    (legendLabelClick)="onLegendLabelClick($event)"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="'Fiscal Year Report'"
+                    [showGridLines]="showGridLines"
+                    [barPadding]="barPadding"
+                    [roundDomains]="roundDomains"
+                    [noBarWhenZero]="noBarWhenZero"
+                    [showDataLabel]="showDataLabel"
+                    [trimXAxisTicks]="trimXAxisTicks"
+                    [trimYAxisTicks]="trimYAxisTicks"
+                    [maxXAxisTickLength]="maxXAxisTickLength"
+                    [maxYAxisTickLength]="maxYAxisTickLength"
+                    >
+                </ngx-charts-bar-vertical-stacked>
+                </div>
+        </div>
+    </div>
+</div>
+
+<!-- SPARKLINE -->
+<!--
+<ngx-charts-sparkline
+[view]="[100, 50]"
+class="chart-container"
+[scheme]="'flame'"
+[results]="sparklineData"
+[animations]="true">
+</ngx-charts-sparkline>
+-->

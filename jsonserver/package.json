@@ -1,0 +1,14 @@
+{
+  "name": "jsonserver",
+  "version": "1.0.0",
+  "description": "Fake JSON API for development",
+  "main": "index.js",
+  "scripts": {
+    "json:server": "json-server -p 4000 --watch db.json"
+  },
+  "author": "Marek Janco",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.15.1"
+  }
+}

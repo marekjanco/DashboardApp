@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'dashboard-app';
+  openedMenu: boolean = false;
+
+  constructor(){
+      this.openedMenu = false;
+  }
+
+  openCloseMenu() {
+      this.openedMenu = !this.openedMenu;
+  }
 }
