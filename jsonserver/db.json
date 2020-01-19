@@ -147,24 +147,16 @@
     ],
     "incidents-by-categories": [
         {
-            "name": "Software",
-            "value": 520
+            "name": "Critical",
+            "value": 9
         },
         {
-            "name": "Hardware",
-            "value": 45
+            "name": "Medium",
+            "value": 16
         },
         {
-            "name": "Network",
-            "value": 89
-        },
-        {
-            "name": "Database",
-            "value": 270
-        },
-        {
-            "name": "Other",
-            "value": 60
+            "name": "Low",
+            "value": 6
         }
     ],
     "attacks" : [

@@ -1,0 +1,59 @@
+.mat-elevation {
+    box-shadow: unset;
+    //border: 1px solid #dee2e6;    
+    border-radius: 0.35rem;
+    overflow: hidden;
+    perspective: 1px;
+    margin-bottom: 20px;
+
+    table {
+        width: 100%;
+        margin: 0px auto;
+        box-shadow: unset;
+        
+        caption {
+            caption-side: top;
+            width: fit-content;
+            padding: 5px 25px;
+            border-top-left-radius: 0.35rem;
+            border-top-right-radius: 0.35rem;
+            color: white;
+            margin-left: 28px;
+        }
+    }
+}
+
+.red-border-table {
+    border-top: .2em solid #d92550;
+}
+.red-bg {
+    background-color: #d92550;
+}
+
+.orange-border-table {
+    border-top: .2em solid #f7b924;
+}
+.orange-bg {
+    background-color: #f7b924;
+}
+
+.green-border-table {
+    border-top: .2em solid #59CBB3;
+}
+.green-bg {
+    background-color: #59CBB3;
+}
+
+
+
+.critical-priority {
+    color: #d92550;
+}
+
+.medium-priority {
+    color: #f7b924;
+}
+
+.low-priority {
+    color: #59CBB3;
+}

@@ -12,12 +12,12 @@
 <!-- SIDEBAR -->
 <div class="sidebar" *ngIf="openedMenu">
   <div id="mySidebar" class="sidebar">
-      <a href="#">Dashboard</a>
-      <a href="#">Other</a>
+    <a routerLink="ciso-board">CISO</a>
+    <a routerLink="incidents-board">Incidents</a>
   </div>
 </div>
 
 <!-- CONTENT -->
 <div class="content" [ngClass]="{'content-with-sidebar': openedMenu}">   
-  <content></content>
+  <router-outlet></router-outlet>
 </div>
