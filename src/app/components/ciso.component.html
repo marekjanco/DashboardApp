@@ -1,4 +1,129 @@
-<div>
+<div class="row">
+    <div class="col-2">           
+        <div class="chart-div">
+            <div class="chart-parent" style="height:250px">
+                <div class="traffic-light">
+                    <div class="lights">
+                        <div class="light red-bg not-active"></div>
+                        <div class="light orange-bg not-active"></div>
+                        <div class="light green-bg"></div>
+                    </div>
+                    <div class="labels">
+                        <div class="light-label"><span class="error-color not-active">NOK</span></div>
+                        <div class="light-label"><span class="warning-color not-active">Exposed</span></div>
+                        <div class="light-label"><span class="ok-color">OK</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">           
+        <div class="chart-div">
+            <div class="chart-heading">
+                System status in 24 hours
+            </div>
+            <div class="chart-parent" style="height:200px">
+                <ngx-charts-line-chart
+                [view]="view"
+                [results]="statusChart24h"
+                [scheme]="colorScheme"
+                [showGridLines]="false"
+                [xAxis]="true"
+                [yAxis]="true"
+                [legend]="false"
+                [yAxisTickFormatting]="yAxisTickFormatting"
+                [autoScale]="true">
+              </ngx-charts-line-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">           
+        <div class="chart-div">
+            <div class="chart-heading">
+                System status in 7 days
+            </div>
+            <div class="chart-parent" style="height:200px">
+                <ngx-charts-line-chart
+                [view]="view"
+                [results]="statusChart24h"
+                [scheme]="colorScheme"
+                [showGridLines]="false"
+                [xAxis]="true"
+                [yAxis]="true"
+                [legend]="false"
+                [yAxisTickFormatting]="yAxisTickFormatting"
+                [autoScale]="true">
+              </ngx-charts-line-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="chart-div">
+            <div class="chart-heading">
+                System status in a month
+            </div>
+            <div class="chart-parent" style="height:200px">
+                <ngx-charts-line-chart
+                [view]="view"
+                [results]="statusChart24h"
+                [scheme]="colorScheme"
+                [showGridLines]="false"
+                [xAxis]="true"
+                [yAxis]="true"
+                [legend]="false"
+                [yAxisTickFormatting]="yAxisTickFormatting"
+                [autoScale]="true">
+              </ngx-charts-line-chart>
+            </div>
+        </div>
+    </div>
+</div>
 
-    fuck you
+<div class="row">
+    <div class="col-3">      
+        <div class="chart-div">
+            <div class="chart-parent" style="height:120px">
+                <div class="widget-class">
+                    <div class="widget-icon">
+                        <span class="lnr lnr-warning error-color" style="margin-bottom: 5px;"></span>
+                    </div>
+                    <div class="widget-content">
+                        <div class="widget-number">31</div>
+                        <div class="widget-subheading">Unresolved incidents</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-3">      
+        <div class="chart-div">
+            <div class="chart-parent" style="height:120px">
+                <div class="widget-class">
+                    <div class="widget-icon">
+                        <span class="lnr lnr-history warning-color" style="margin-left: 10px"></span>
+                    </div>
+                    <div class="widget-content">
+                        <div class="widget-number">8.1 hours</div>
+                        <div class="widget-subheading">Avg. response time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">      
+        <div class="chart-div">
+            <div class="chart-parent" style="height:120px">
+                <ngx-charts-area-chart
+                [view]="view"
+                [scheme]="colorScheme"
+                [results]="multi"
+                [xAxis]="true"
+                [yAxis]="true"
+                [legend]="false">
+              </ngx-charts-area-chart>
+            </div>
+        </div>
+    </div>
 </div>

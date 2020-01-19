@@ -1,4 +1,73 @@
 {
+    "status-24-hours" : [{
+        "name": "24 hours status",
+        "series": [
+          {
+            "value": 1,
+            "name": "1:00"    
+          },
+          {
+            "value": 3,
+            "name": "2:00"    
+          },
+          {
+            "value": 3,
+            "name": "3:00"    
+          },
+          {
+            "value": 3,
+            "name": "3:00"    
+          },
+          {
+            "value": 1,
+            "name": "4:00"    
+          },
+          {
+            "value": 1,
+            "name": "5:00"    
+          },
+          {
+            "value": 1,
+            "name": "7:00"    
+          },
+          {
+            "value": 1,
+            "name": "8:00"    
+          },
+          {
+            "value": 1,
+            "name": "9:00"    
+          },
+          {
+            "value": 1,
+            "name": "10:00"    
+          },
+          {
+            "value": 3,
+            "name": "11:00"    
+          },
+          {
+            "value": 1,
+            "name": "12:00"    
+          },
+          {
+            "value": 1,
+            "name": "13:00"    
+          },
+          {
+            "value": 1,
+            "name": "14:00"    
+          },
+          {
+            "value": 1,
+            "name": "15:00"    
+          },
+          {
+            "value": 1,
+            "name": "8:00"    
+          }
+        ]
+    }],
     "linear-gauge" : {
         "minValue": 0,
         "maxValue": 100,

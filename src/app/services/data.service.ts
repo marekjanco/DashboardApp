@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 import {Incident} from '../components/content.component';
+import {StatusChart} from '../components/ciso.component';
 
 @Injectable()
 export class DataService {
@@ -11,6 +12,10 @@ export class DataService {
     }
     getIncidentsByCategory(){
         return this.http.get<Incident[]>('http://localhost:4000/incidents-by-categories').pipe(
+            map(res => res));
+    }
+    getStatus24h(){
+        return this.http.get<StatusChart>('http://localhost:4000/status-24-hours').pipe(
             map(res => res));
     }
 }

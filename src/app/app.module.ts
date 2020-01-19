@@ -2,10 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, 
   MatSortModule, MatTableModule } from "@angular/material";
-import { RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 //ROUTER
-import appRoutes from './routerConfig';
+export const appRoutes: Routes = [
+  { path: 'ciso-board', 
+    component: CisoComponent 
+  },
+  {
+    path: 'incidents-board',
+    component: ContentComponent
+  }
+];
 
 //DEPENDENCIES
 import { NgxChartsModule } from '@swimlane/ngx-charts';
