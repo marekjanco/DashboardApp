@@ -47,17 +47,13 @@
     <div class="col-3">
         <div class="chart-div">
             <div class="chart-parent" style="height:150px">
-                <!-- PIE CHART -->       
-                <ngx-charts-pie-chart
-                    [view]="view"
-                    [scheme]="incidentsColorScheme"
-                    [results]="incidentsByCategory"
-                    [legend]="false"
-                    [explodeSlices]="true"
-                    [labels]="true"
-                    [doughnut]="true"
-                    [gradient]="false">
-                </ngx-charts-pie-chart>
+                <!-- PIE CHART -->     
+                <ngx-charts-advanced-pie-chart
+                [view]="view"
+                [scheme]="incidentsColorScheme"
+                [results]="incidentsByCategory"
+                [gradient]="false">
+            </ngx-charts-advanced-pie-chart>  
             </div>
         </div>
     </div>

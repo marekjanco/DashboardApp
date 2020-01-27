@@ -80,49 +80,176 @@
 </div>
 
 <div class="row">
-    <div class="col-3">      
-        <div class="chart-div">
-            <div class="chart-parent" style="height:120px">
-                <div class="widget-class">
-                    <div class="widget-icon">
-                        <span class="lnr lnr-warning error-color" style="margin-bottom: 5px;"></span>
-                    </div>
-                    <div class="widget-content">
-                        <div class="widget-number">31</div>
-                        <div class="widget-subheading">Unresolved incidents</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-3">      
-        <div class="chart-div">
-            <div class="chart-parent" style="height:120px">
-                <div class="widget-class">
-                    <div class="widget-icon">
-                        <span class="lnr lnr-history warning-color" style="margin-left: 10px"></span>
-                    </div>
-                    <div class="widget-content">
-                        <div class="widget-number">8.1 hours</div>
-                        <div class="widget-subheading">Avg. response time</div>
+    <div class="col-6" style="padding-left: 0px; padding-right: 0px;">
+        <div style="display: flex;">
+            <div class="col-6">      
+                <div class="chart-div">
+                    <div class="chart-parent" style="height:105px">
+                        <div class="widget-class">
+                            <div class="widget-icon">
+                                <span class="lnr lnr-warning error-color" style="margin-bottom: 5px;"></span>
+                            </div>
+                            <div class="widget-content">
+                                <div class="widget-number">31</div>
+                                <div class="widget-subheading">Unresolved incidents</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="col-6">      
+                <div class="chart-div">
+                    <div class="chart-parent" style="height:105px">
+                        <div class="widget-class">
+                            <div class="widget-icon">
+                                <span class="lnr lnr lnr-checkmark-circle ok-color" style="margin-left: 10px"></span>
+                            </div>
+                            <div class="widget-content">
+                                <div class="widget-number">7 <span class="badge">Today</span></div>
+                                <div class="widget-subheading">Closed Incidents</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
-    </div>
 
-    <div class="col-6">      
+            <div style="display: flex;">
+                <div class="col-6">      
+                    <div class="chart-div">
+                        <div class="chart-parent" style="height:105px">
+                            <div class="widget-class">
+                                <div class="widget-icon">
+                                    <span class="lnr lnr-history warning-color" style="margin-left: 10px"></span>
+                                </div>
+                                <div class="widget-content">
+                                    <div class="widget-number">8.1 hours <span class="lnr lnr-arrow-down ok-color"></span></div>
+                                    <div class="widget-subheading">Avg. response time</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">      
+                    <div class="chart-div">
+                        <div class="chart-parent" style="height:105px">
+                            <div class="widget-class">
+                                <div class="widget-icon">
+                                    <span class="lnr lnr-clock warning-color" style="margin-left: 10px"></span>
+                                </div>
+                                <div class="widget-content">
+                                    <div class="widget-number">1.8 hours <span class="lnr lnr-arrow-up error-color"></span></div>
+                                    <div class="widget-subheading">Avg. time to solve an incident</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        </div>
+
+        <div class="col-6">      
+            <div class="chart-div">
+                <div class="chart-heading">
+                    Number of incidents over a week
+                </div>
+                <div class="chart-parent" style="height:200px">
+                        <ngx-charts-line-chart
+                        [view]="view"
+                        [scheme]="colorScheme"
+                        [results]="incidentsOverWeek"
+                        [xAxis]="true"
+                        [yAxis]="true"
+                        [autoScale]="true"
+                        [curve]="curveType"
+                        [legend]="true">
+                    </ngx-charts-line-chart>    
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
         <div class="chart-div">
+            <div class="chart-heading">
+                IP Blacklist
+            </div>
             <div class="chart-parent" style="height:120px">
+                <!-- IP Blacklist -->       
+                <ngx-charts-advanced-pie-chart
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [results]="IpBlacklist"
+                    [gradient]="false">
+                </ngx-charts-advanced-pie-chart>
+            </div>
+            <div style="height:15px">
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="chart-div">
+            <div class="chart-heading">
+                E-mail Blacklist
+            </div>
+            <div class="chart-parent" style="height:120px">
+                <!-- EMAIL Blacklist -->       
+                <ngx-charts-advanced-pie-chart
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [results]="EmailBlacklist"
+                    [gradient]="false">
+                </ngx-charts-advanced-pie-chart>
+            </div>
+            <div style="height:15px">
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="chart-div">
+            <div class="chart-heading">
+                DNS Blacklist
+            </div>
+            <div class="chart-parent" style="height:120px">
+                <!-- DNS Blacklist -->       
+                <ngx-charts-advanced-pie-chart
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [results]="DnsBlacklist"
+                    [gradient]="false">
+                </ngx-charts-advanced-pie-chart>
+            </div>
+            <div style="height:15px">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">      
+        <div class="chart-div">
+            <div class="chart-heading">
+                In/Out traffic
+            </div>
+            <div class="chart-parent" style="height:250px">
                 <ngx-charts-area-chart
                 [view]="view"
-                [scheme]="colorScheme"
-                [results]="multi"
+                [scheme]="colorSchemeTraffic"
+                [results]="traffic"
                 [xAxis]="true"
                 [yAxis]="true"
-                [legend]="false">
+                [showYAxisLabel]="true"
+                [showXAxisLabel]="false"
+                [xAxisLabel]="'Time'"
+                [yAxisLabel]="'MB / sec'"
+                [legendPosition]="'below'"
+                [legend]="true">
               </ngx-charts-area-chart>
+            </div>
+            <div class="legend-bottom-wrapper">
             </div>
         </div>
     </div>

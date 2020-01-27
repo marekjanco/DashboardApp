@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../services/data.service';
+import * as shape from 'd3-shape';
 
 @Component({
     selector: 'ciso-dashboard',
@@ -7,58 +8,35 @@ import { DataService } from '../services/data.service';
     styleUrls: ['./ciso.component.scss']
 })
 export class CisoComponent {
-    multi = [
-        {
-          "name": "Germany",
-          "series": [
-            {
-              "name": "2010",
-              "value": 7300000
-            },
-            {
-              "name": "2011",
-              "value": 8940000
-            }
-          ]
-        },
-      
-        {
-          "name": "USA",
-          "series": [
-            {
-              "name": "2010",
-              "value": 7870000
-            },
-            {
-              "name": "2011",
-              "value": 8270000
-            }
-          ]
-        },
-      
-        {
-          "name": "France",
-          "series": [
-            {
-              "name": "2010",
-              "value": 5000002
-            },
-            {
-              "name": "2011",
-              "value": 5800000
-            }
-          ]
-        }
-      ];
-      
 
+    IpBlacklist: Blacklist;
+    DnsBlacklist: Blacklist;
+    EmailBlacklist: Blacklist;
+    incidentsOverWeek: IncidentsOverWeek;
+    traffic: Traffic;
+    
     statusChart24h: StatusChart;
     yAxisStatusFormatting = this.yAxisTickFormatting.bind(this);
+    curveType = shape.curveMonotoneX;
 
     constructor(private dataService: DataService){
         this.dataService.getStatus24h().subscribe((value: StatusChart) => {
             this.statusChart24h = value;
-            console.log(value);
+        });
+        this.dataService.getIpBlacklist().subscribe((value: Blacklist) => {
+          this.IpBlacklist = value;
+        });
+        this.dataService.getDnsBlacklist().subscribe((value: Blacklist) => {
+          this.DnsBlacklist = value;
+        });
+        this.dataService.getEmailBlacklist().subscribe((value: Blacklist) => {
+          this.EmailBlacklist = value;
+        });
+        this.dataService.getIncidentsOverWeek().subscribe((value: IncidentsOverWeek) => {
+          this.incidentsOverWeek = value;
+        });
+        this.dataService.getTraffic().subscribe((value: Traffic) => {
+          this.traffic = value;
         });
     }
 
@@ -70,13 +48,34 @@ export class CisoComponent {
     colorScheme = {
       domain: ['#d92550', '#f7b924', '#59CBB3']
     };
+    colorSchemeTraffic = {
+      domain: [ '#59CBB3', '#d92550']
+    };
+}
+
+export interface Blacklist {
+  series: Item[]; 
 }
 
 export interface StatusChart {
     name: string;
-    series: Status[]; 
+    series: Item[]; 
 }
-interface Status {
-    value: number;
-    name: string;
+
+export interface IncidentsOverWeek {
+  name: string;
+  series: ItemArray[]; 
+}
+
+export interface Traffic {
+  series: ItemArray[]; 
+}
+
+interface ItemArray {
+  name: string;
+  series: Item[]; 
+}
+interface Item {
+  name: string;
+  value: number;
 }

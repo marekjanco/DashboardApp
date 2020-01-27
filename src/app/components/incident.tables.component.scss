@@ -44,8 +44,6 @@
     background-color: #59CBB3;
 }
 
-
-
 .critical-priority {
     color: #d92550;
 }
@@ -56,4 +54,18 @@
 
 .low-priority {
     color: #59CBB3;
+}
+
+::ng-deep {
+    ngx-charts-advanced-pie-chart {
+        .advanced-pie-legend {
+            margin-left: 20px;
+        }
+        .total-label {
+            display: none;
+        }
+        .total-value {
+            font-size: 28px;
+        }
+    }
 }

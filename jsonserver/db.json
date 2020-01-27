@@ -68,152 +68,6 @@
           }
         ]
     }],
-    "linear-gauge" : {
-        "minValue": 0,
-        "maxValue": 100,
-        "value": 50,
-        "previousValue": 70,
-        "units": "unresolved incidents"
-    },
-    "number-cards": [
-        {
-          "name": "Malicious Access",
-          "value": 0
-        },
-        {
-          "name": "Dangerous Access",
-          "value": 379
-        },
-        {
-          "name": "Unknown Access",
-          "value": 0
-        },
-        {
-          "name": "Clean Access",
-          "value": 31004873
-        },
-        {
-          "name": "Blocked URL",
-          "value": 28
-        }
-      ],
-    "bubble-chart" : [
-        {
-            "name": "Software",
-            "series": [
-            {
-                "name": "Brute force",
-                "x": "Brute force",
-                "y": 7,
-                "r": 80.4
-            },
-            {
-                "name": "Suspicious activity",
-                "x": "Suspicious activity",
-                "y": 2,
-                "r": 78
-            },
-            {
-                "name": "Policy vialation",
-                "x": "Policy vialation",
-                "y": 4,
-                "r": 79
-            }
-            ]
-        },
-        {
-            "name": "Hardware",
-            "series": [
-            {
-                "name": "Brute force",
-                "x": "Brute force",
-                "y": 8,
-                "r": 310
-            },
-            {
-                "name": "Suspicious activity",
-                "x": "Suspicious activity",
-                "y": 5,
-                "r": 283
-            },
-            {
-                "name": "Policy vialation",
-                "x": "Policy vialation",
-                "y": 7,
-                "r": 253
-            }
-            ]
-        },
-        {
-            "name": "Network",
-            "series": [
-            {
-                "name": "Brute force",
-                "x": "Brute force",
-                "y": 2,
-                "r": 63
-            },
-            {
-                "name": "Suspicious activity",
-                "x": "Suspicious activity",
-                "y": 1,
-                "r": 59.4
-            },
-            {
-                "name": "Policy vialation",
-                "x": "Policy vialation",
-                "y": 4,
-                "r": 56.9
-            }
-            ]
-        },
-        {
-            "name": "Database",
-            "series": [
-            {
-                "name": "Brute force",
-                "x": "Brute force",
-                "y": 5,
-                "r": 62.7
-            },
-            {
-                "name": "Suspicious activity",
-                "x": "Suspicious activity",
-                "y": 3,
-                "r": 58.9
-            },
-            {
-                "name": "Policy vialation",
-                "x": "Policy vialation",
-                "y": 6,
-                "r": 57.1
-            }
-            ]
-        },
-        {
-            "name": "Other",
-            "series": [
-                {
-                "name": "Brute force",
-                "x": "Brute force",
-                "y": 6,
-                "r": 62.7
-                },
-                {
-                "name": "Suspicious activity",
-                "x": "Suspicious activity",
-                "y": 8,
-                "r": 70.3
-                },
-                {
-                "name": "Policy vialation",
-                "x": "Policy vialation",
-                "y": 2,
-                "r": 150
-                }
-            ]
-        }
-    ],
     "incidents-by-categories": [
         {
             "name": "Critical",
@@ -228,86 +82,359 @@
             "value": 6
         }
     ],
-    "attacks" : [
+    "ip-blacklist" : [
+      {
+          "name": "Telnet",
+          "value": 456
+      },
+      {
+          "name": "Scan detection",
+          "value": 5094
+      },
+      {
+          "name": "Word",
+          "value": 42
+      }
+  ],
+  "email-blacklist" : [
+    {
+        "name": "Connect",
+        "value": 136
+    },
+    {
+        "name": "To",
+        "value": 67
+    },
+    {
+        "name": "From",
+        "value": 266
+    }
+  ],
+  "dns-blacklist" : [
+    {
+        "name": "50.225.183.14",
+        "value": 1
+    },
+    {
+        "name": "246.248.6.17",
+        "value": 2
+    },
+    {
+        "name": "206.166.89.18",
+        "value": 1
+    }
+  ],
+  "incidents-over-week" : [
+    {
+      "name": "Critical risk",
+      "series": [
         {
-          "name": "Attacks",
-          "series": [
-            {
-              "name": "24/11",
-              "value": 6
-            },
-            {
-              "name": "30/11",
-              "value": 1
-            }
-          ]
+          "name": "Mon",
+          "value": 54
         },
         {
-          "name": "Visits",
-          "series": [
-            {
-              "name": "24/11",
-              "value": 23
-            },
-            {
-              "name": "30/11",
-              "value": 38
-            }
-          ]
+          "name": "Tue",
+          "value": 42
+        },
+        {
+          "name": "Wed",
+          "value": 33
+        },
+        {
+          "name": "Thu",
+          "value": 29
+        },
+        {
+          "name": "Fri",
+          "value": 25
+        },
+        {
+          "name": "Sat",
+          "value": 26
+        },
+        {
+          "name": "Sun",
+          "value": 38
         }
-    ],
-    "visits" : [
+        ]
+    },
+    {
+      "name": "Medium risk",
+      "series": [
         {
-          "name": "2016",
-          "series": [
-            {
-                "name": "Attacks",
-                "value": 33
-            },
-            {
-                "name": "Visits",
-                "value": 121
-            }
-          ]
+          "name": "Mon",
+          "value": 35
         },
         {
-            "name": "2017",
-            "series": [
-                {
-                "name": "Attacks",
-                "value": 87
-                },
-                {
-                "name": "Visits",
-                "value": 181
-                }
-            ]
-            },
-            {
-                "name": "2018",
-                "series": [
-                {
-                    "name": "Attacks",
-                    "value": 64
-                },
-                {
-                    "name": "Visits",
-                    "value": 202
-                }
-                ]
-            },
-            {
-                "name": "2019",
-                "series": [
-                    {
-                        "name": "Attacks",
-                        "value": 44
-                    },
-                    {
-                        "name": "Visits",
-                        "value": 211
-                    }
-                ]
-            }
+          "name": "Tue",
+          "value": 32
+        },
+        {
+          "name": "Wed",
+          "value": 36
+        },
+        {
+          "name": "Thu",
+          "value": 21
+        },
+        {
+          "name": "Fri",
+          "value": 31
+        },
+        {
+          "name": "Sat",
+          "value": 33
+        },
+        {
+          "name": "Sun",
+          "value": 35
+        }
+        ]
+    },
+    {
+      "name": "Low risk",
+      "series": [
+        {
+          "name": "Mon",
+          "value": 14
+        },
+        {
+          "name": "Tue",
+          "value": 35
+        },
+        {
+          "name": "Wed",
+          "value": 22
+        },
+        {
+          "name": "Thu",
+          "value": 42
+        },
+        {
+          "name": "Fri",
+          "value": 21
+        },
+        {
+          "name": "Sat",
+          "value": 19
+        },
+        {
+          "name": "Sun",
+          "value": 48
+        }
+        ]
+    }
+  ],
+  "in-out-traffic" : [
+    {
+      "name": "Outbound traffic",
+      "series": [
+        {
+          "name": "0:00",
+          "value": 85
+        },
+        {
+          "name": "1:00",
+          "value": 48
+        },
+        {
+          "name": "2:00",
+          "value": 25
+        },
+        {
+          "name": "3:00",
+          "value": 21
+        },
+        {
+          "name": "4:00",
+          "value": 35
+        },
+        {
+          "name": "5:00",
+          "value": 56
+        },
+        {
+          "name": "6:00",
+          "value": 120
+        },
+        {
+          "name": "7:00",
+          "value": 150
+        },
+        {
+          "name": "8:00",
+          "value": 190
+        },
+        {
+          "name": "9:00",
+          "value": 220
+        },
+        {
+          "name": "10:00",
+          "value": 230
+        },
+        {
+          "name": "11:00",
+          "value": 215
+        },
+        {
+          "name": "12:00",
+          "value": 190
+        },
+        {
+          "name": "13:00",
+          "value": 195
+        },
+        {
+          "name": "14:00",
+          "value": 208
+        },
+        {
+          "name": "15:00",
+          "value": 255
+        },
+        {
+          "name": "16:00",
+          "value": 278
+        },
+        {
+          "name": "17:00",
+          "value": 244
+        },
+        {
+          "name": "18:00",
+          "value": 224
+        },
+        {
+          "name": "19:00",
+          "value": 190
+        },
+        {
+          "name": "20:00",
+          "value": 175
+        },
+        {
+          "name": "21:00",
+          "value": 165
+        },
+        {
+          "name": "22:00",
+          "value": 163
+        },
+        {
+          "name": "23:00",
+          "value": 85
+        },
+        {
+          "name": "24:00",
+          "value": 75
+        }
       ]
+    },
+    {
+      "name": "Inbound traffic",
+      "series": [
+        {
+          "name": "0:00",
+          "value": 1
+        },
+        {
+          "name": "1:00",
+          "value": 1
+        },
+        {
+          "name": "2:00",
+          "value": 2
+        },
+        {
+          "name": "3:00",
+          "value": 2
+        },
+        {
+          "name": "4:00",
+          "value": 3
+        },
+        {
+          "name": "5:00",
+          "value": 4
+        },
+        {
+          "name": "6:00",
+          "value": 15
+        },
+        {
+          "name": "7:00",
+          "value": 30
+        },
+        {
+          "name": "8:00",
+          "value": 35
+        },
+        {
+          "name": "9:00",
+          "value": 37
+        },
+        {
+          "name": "10:00",
+          "value": 34
+        },
+        {
+          "name": "11:00",
+          "value": 35
+        },
+        {
+          "name": "12:00",
+          "value": 31
+        },
+        {
+          "name": "13:00",
+          "value": 38
+        },
+        {
+          "name": "14:00",
+          "value": 42
+        },
+        {
+          "name": "15:00",
+          "value": 44
+        },
+        {
+          "name": "16:00",
+          "value": 42
+        },
+        {
+          "name": "17:00",
+          "value": 32
+        },
+        {
+          "name": "18:00",
+          "value": 30
+        },
+        {
+          "name": "19:00",
+          "value": 29
+        },
+        {
+          "name": "20:00",
+          "value": 29
+        },
+        {
+          "name": "21:00",
+          "value": 20 
+        },
+        {
+          "name": "22:00",
+          "value": 8
+        },
+        {
+          "name": "23:00",
+          "value": 5
+        },
+        {
+          "name": "24:00",
+          "value": 2
+        }
+        ]
+    }
+  ]
 }
