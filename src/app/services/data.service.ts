@@ -10,8 +10,16 @@ export class DataService {
     constructor(private http: HttpClient){
         console.log('initializing service');
     }
+    getIncidentsByPriority(){
+        return this.http.get<Incident[]>('http://localhost:4000/incidents-by-priority').pipe(
+            map(res => res));
+    }
     getIncidentsByCategory(){
-        return this.http.get<Incident[]>('http://localhost:4000/incidents-by-categories').pipe(
+        return this.http.get<Incident[]>('http://localhost:4000/incidents-by-category').pipe(
+            map(res => res));
+    }    
+    getIncidentsAssignedToMe(){
+        return this.http.get<Incident[]>('http://localhost:4000/incidents-assigned').pipe(
             map(res => res));
     }
     getStatus24h(){

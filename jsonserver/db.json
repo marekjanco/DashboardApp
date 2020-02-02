@@ -68,7 +68,7 @@
           }
         ]
     }],
-    "incidents-by-categories": [
+    "incidents-by-priority": [
         {
             "name": "Critical",
             "value": 9
@@ -81,7 +81,35 @@
             "name": "Low",
             "value": 6
         }
-    ],
+    ],    
+    "incidents-assigned": [
+      {
+          "name": "Critical",
+          "value": 2
+      },
+      {
+          "name": "Medium",
+          "value": 4
+      },
+      {
+          "name": "Low",
+          "value": 1
+      }
+  ],   
+    "incidents-by-category": [
+      {
+          "name": "General",
+          "value": 19
+      },
+      {
+          "name": "Automatic",
+          "value": 47
+      },
+      {
+          "name": "Info",
+          "value": 23
+      }
+  ],
     "ip-blacklist" : [
       {
           "name": "Telnet",
@@ -227,7 +255,7 @@
   ],
   "in-out-traffic" : [
     {
-      "name": "Outbound traffic",
+      "name": "Inbound traffic",
       "series": [
         {
           "name": "0:00",
@@ -332,7 +360,7 @@
       ]
     },
     {
-      "name": "Inbound traffic",
+      "name": "Outbound traffic",
       "series": [
         {
           "name": "0:00",

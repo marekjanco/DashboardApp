@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-3">           
         <div class="chart-div">
-            <div class="chart-parent" style="height:150px">
+            <div class="chart-parent" style="height:120px">
                 <div class="widget-class">
                     <div class="widget-icon">
                         <span class="lnr lnr-warning error-color" style="margin-bottom: 5px;"></span>
@@ -16,7 +16,7 @@
     </div>
     <div class="col-3">           
         <div class="chart-div">
-            <div class="chart-parent" style="height:150px">
+            <div class="chart-parent" style="height:120px">
                 <div class="widget-class">
                     <div class="widget-icon">
                         <span class="lnr lnr-plus-circle" style="color: #59CBB3"></span>
@@ -31,7 +31,7 @@
     </div>
     <div class="col-3">           
         <div class="chart-div">
-            <div class="chart-parent" style="height:150px">
+            <div class="chart-parent" style="height:120px">
                 <div class="widget-class">
                     <div class="widget-icon">
                         <span class="lnr lnr-hand warning-color"></span>
@@ -44,18 +44,77 @@
             </div>
         </div>
     </div>
-    <div class="col-3">
+    <div class="col-3"> 
         <div class="chart-div">
-            <div class="chart-parent" style="height:150px">
-                <!-- PIE CHART -->     
-                <ngx-charts-advanced-pie-chart
-                [view]="view"
-                [scheme]="incidentsColorScheme"
-                [results]="incidentsByCategory"
-                [gradient]="false">
-            </ngx-charts-advanced-pie-chart>  
+            <div class="chart-parent" style="height:120px">
+                <div class="widget-class">
+                    <div class="widget-icon">
+                        <span class="lnr lnr-tag" style="color: #7AA3E5"></span>
+                    </div>
+                    <div class="widget-content">
+                        <div class="widget-number">7</div>
+                        <div class="widget-subheading">Incidents assigned to me</div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">  
+        <div class="chart-div">
+            <div class="chart-heading pie-chart-header">
+                All Incidents by priority
+            </div>
+            <div class="chart-parent" style="height:100px">
+                <!-- PIE CHART -->     
+                <ngx-charts-advanced-pie-chart
+                    [view]="view"
+                    [scheme]="incidentsColorScheme"
+                    [results]="incidentsByPriority"
+                    [gradient]="false">
+                 </ngx-charts-advanced-pie-chart>  
+            </div>
+            <div style="height:15px">
+            </div>
+        </div>         
+    </div>
+    <div class="col-4">  
+        <div class="chart-div">
+            <div class="chart-heading pie-chart-header">
+                All incidents by category
+            </div>
+            <div class="chart-parent" style="height:100px">
+                <!-- PIE CHART -->     
+                <ngx-charts-advanced-pie-chart
+                    [view]="view"
+                    [scheme]="generalColorScheme"
+                    [results]="incidentsByCategory"
+                    [gradient]="false">
+                 </ngx-charts-advanced-pie-chart>  
+            </div>
+            <div style="height:15px">
+            </div>
+        </div>         
+    </div>
+    <div class="col-4">  
+        <div class="chart-div">
+            <div class="chart-heading pie-chart-header">
+                Incidents assigned to me
+            </div>
+            <div class="chart-parent" style="height:100px">
+                <!-- PIE CHART -->     
+                <ngx-charts-advanced-pie-chart
+                    [view]="view"
+                    [scheme]="incidentsColorScheme"
+                    [results]="incidentsAssignedToMe"
+                    [gradient]="false">
+                 </ngx-charts-advanced-pie-chart>  
+            </div>
+            <div style="height:15px">
+            </div>
+        </div>         
     </div>
 </div>
 

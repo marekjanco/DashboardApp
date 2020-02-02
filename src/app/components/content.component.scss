@@ -18,6 +18,10 @@
         font-size: 1.2rem !important;
     }
 
+    .chart-heading.pie-chart-header {
+        padding-bottom: 0px;
+    }
+
     .widget-class {
         flex-direction: row;
         align-items: center;
@@ -116,4 +120,10 @@
 incidents-table {
     width: 96%;
     margin: 10px auto;
+}
+
+::ng-deep {
+    .item-percent {
+        display: none;
+    }
 }

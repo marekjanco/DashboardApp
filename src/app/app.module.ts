@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, 
-  MatSortModule, MatTableModule } from "@angular/material";
+  MatSortModule, MatTableModule, MatTabsModule } from "@angular/material";
 import { Routes, RouterModule } from '@angular/router';
 
 //ROUTER
@@ -43,7 +43,8 @@ import { DataService } from './services/data.service';
     HttpClientModule,
     MatTableModule,     //angular material
     MatPaginatorModule, //angular material
-    MatSortModule,       //angular material
+    MatSortModule,      //angular material
+    MatTabsModule,      //angular material
     RouterModule.forRoot(appRoutes)
   ],
   providers: [DataService],
