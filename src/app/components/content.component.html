@@ -7,7 +7,7 @@
                         <span class="lnr lnr-warning error-color" style="margin-bottom: 5px;"></span>
                     </div>
                     <div class="widget-content">
-                        <div class="widget-number">31</div>
+                        <div class="widget-number">31 <span class="badge red-badge">+ 10</span></div>
                         <div class="widget-subheading">Unresolved incidents</div>
                     </div>
                 </div>
@@ -22,14 +22,13 @@
                         <span class="lnr lnr-plus-circle" style="color: #59CBB3"></span>
                     </div>
                     <div class="widget-content">
-                        <div class="widget-number">6 <span class="badge">in 24 hours</span></div>
-                        <div class="widget-subheading">New incidents</div>
+                        <div class="widget-number">6</div>
+                        <div class="widget-subheading">New incidents (Today)</div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-3">           
+    </div>    <div class="col-3">
         <div class="chart-div">
             <div class="chart-parent" style="height:120px">
                 <div class="widget-class">
@@ -42,9 +41,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
-    <div class="col-3"> 
+    <div class="col-3">
         <div class="chart-div">
             <div class="chart-parent" style="height:120px">
                 <div class="widget-class">
@@ -52,7 +51,7 @@
                         <span class="lnr lnr-tag" style="color: #7AA3E5"></span>
                     </div>
                     <div class="widget-content">
-                        <div class="widget-number">7</div>
+                        <div class="widget-number">7  <span class="badge green-badge">- 2</span></div>
                         <div class="widget-subheading">Incidents assigned to me</div>
                     </div>
                 </div>
@@ -62,57 +61,42 @@
 </div>
 
 <div class="row">
-    <div class="col-4">  
-        <div class="chart-div">
+
+    <div class="col-6">  
+        <div class="chart-div stacked-chart">
             <div class="chart-heading pie-chart-header">
                 All Incidents by priority
             </div>
-            <div class="chart-parent" style="height:100px">
-                <!-- PIE CHART -->     
-                <ngx-charts-advanced-pie-chart
+            <div class="chart-parent" style="height:50px">
+                <ngx-charts-bar-horizontal-stacked
                     [view]="view"
-                    [scheme]="incidentsColorScheme"
+                    [scheme]="incidentsEasyColorScheme"
                     [results]="incidentsByPriority"
+                    [legend]="true"
+                    [legendPosition]="'below'"
                     [gradient]="false">
-                 </ngx-charts-advanced-pie-chart>  
+                 </ngx-charts-bar-horizontal-stacked>  
             </div>
-            <div style="height:15px">
+            <div style="height:45px">
             </div>
         </div>         
     </div>
-    <div class="col-4">  
-        <div class="chart-div">
-            <div class="chart-heading pie-chart-header">
-                All incidents by category
-            </div>
-            <div class="chart-parent" style="height:100px">
-                <!-- PIE CHART -->     
-                <ngx-charts-advanced-pie-chart
-                    [view]="view"
-                    [scheme]="generalColorScheme"
-                    [results]="incidentsByCategory"
-                    [gradient]="false">
-                 </ngx-charts-advanced-pie-chart>  
-            </div>
-            <div style="height:15px">
-            </div>
-        </div>         
-    </div>
-    <div class="col-4">  
-        <div class="chart-div">
+    <div class="col-6">  
+        <div class="chart-div stacked-chart">
             <div class="chart-heading pie-chart-header">
                 Incidents assigned to me
             </div>
-            <div class="chart-parent" style="height:100px">
-                <!-- PIE CHART -->     
-                <ngx-charts-advanced-pie-chart
+            <div class="chart-parent" style="height:50px">
+                <ngx-charts-bar-horizontal-stacked
                     [view]="view"
-                    [scheme]="incidentsColorScheme"
+                    [scheme]="incidentsEasyColorScheme"
                     [results]="incidentsAssignedToMe"
+                    [legend]="true"
+                    [legendPosition]="'below'"
                     [gradient]="false">
-                 </ngx-charts-advanced-pie-chart>  
+                 </ngx-charts-bar-horizontal-stacked>
             </div>
-            <div style="height:15px">
+            <div style="height:45px">
             </div>
         </div>         
     </div>

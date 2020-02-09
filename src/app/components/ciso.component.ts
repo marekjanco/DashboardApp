@@ -14,6 +14,8 @@ export class CisoComponent {
     EmailBlacklist: Blacklist;
     incidentsOverWeek: IncidentsOverWeek;
     traffic: Traffic;
+    timeToResponseGraph: TimeTo;
+    timeToSolveGraph: TimeTo;
     
     statusChart24h: StatusChart;
     yAxisStatusFormatting = this.yAxisTickFormatting.bind(this);
@@ -24,6 +26,7 @@ export class CisoComponent {
             this.statusChart24h = value;
         });
         this.dataService.getIpBlacklist().subscribe((value: Blacklist) => {
+          console.log(value);
           this.IpBlacklist = value;
         });
         this.dataService.getDnsBlacklist().subscribe((value: Blacklist) => {
@@ -38,6 +41,12 @@ export class CisoComponent {
         this.dataService.getTraffic().subscribe((value: Traffic) => {
           this.traffic = value;
         });
+        this.dataService.getTimeToResponse().subscribe((value: TimeTo) => {
+          this.timeToResponseGraph = value;
+        });
+        this.dataService.getTimeToSolve().subscribe((value: TimeTo) => {
+          this.timeToSolveGraph = value;
+        });
     }
 
     yAxisTickFormatting(value) {
@@ -48,13 +57,27 @@ export class CisoComponent {
     colorScheme = {
       domain: ['#d92550', '#f7b924', '#59CBB3']
     };
+    timeToColorScheme = {
+      domain: ['#95EAFF']
+    }
     colorSchemeTraffic = {
       domain: [ '#59CBB3', '#d92550']
     };
+
+    IPColorScheme = {
+      domain: ['#D0F6FF', '#B3DAFF', '#96BEFF']
+    } 
+    EmailColorScheme = {
+      domain: ['#FFE2E1', '#FFC6C5', '#E38F8F']
+    }
+    DNSColorScheme = {
+      domain: ['#D9B3DF', '#BD98C3', '#A27EA8']
+    }
 }
 
 export interface Blacklist {
-  series: Item[]; 
+  name: string;
+  series: ItemArray[]; 
 }
 
 export interface StatusChart {
@@ -68,6 +91,10 @@ export interface IncidentsOverWeek {
 }
 
 export interface Traffic {
+  series: ItemArray[]; 
+}
+
+export interface TimeTo {
   series: ItemArray[]; 
 }
 

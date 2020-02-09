@@ -68,90 +68,101 @@
           }
         ]
     }],
-    "incidents-by-priority": [
-        {
+    "incidents-by-priority" : [
+      {
+        "name": "Incidents by priority",
+        "series": [
+          {
             "name": "Critical",
             "value": 9
-        },
-        {
-            "name": "Medium",
-            "value": 16
-        },
-        {
-            "name": "Low",
-            "value": 6
-        }
-    ],    
-    "incidents-assigned": [
-      {
-          "name": "Critical",
-          "value": 2
-      },
-      {
-          "name": "Medium",
-          "value": 4
-      },
-      {
-          "name": "Low",
-          "value": 1
+          },
+          {
+              "name": "Medium",
+              "value": 16
+          },
+          {
+              "name": "Low",
+              "value": 6
+          }
+        ]
       }
-  ],   
-    "incidents-by-category": [
+    ],  
+    "incidents-assigned" : [
       {
-          "name": "General",
-          "value": 19
-      },
-      {
-          "name": "Automatic",
-          "value": 47
-      },
-      {
-          "name": "Info",
-          "value": 23
+        "name": "Incidents assigned",
+        "series": [
+          {
+            "name": "Critical",
+            "value": 1
+          },
+          {
+              "name": "Medium",
+              "value": 3
+          },
+          {
+              "name": "Low",
+              "value": 5
+          }
+        ]
       }
-  ],
+    ],
     "ip-blacklist" : [
       {
-          "name": "Telnet",
-          "value": 456
-      },
-      {
-          "name": "Scan detection",
-          "value": 5094
-      },
-      {
-          "name": "Word",
-          "value": 42
+        "name": "IP blacklist",
+        "series": [
+          {
+              "name": "Telnet",
+              "value": 856
+          },
+          {
+              "name": "Scan detection",
+              "value": 5094
+          },
+          {
+              "name": "Word",
+              "value": 352
+          }
+        ]
       }
-  ],
-  "email-blacklist" : [
-    {
-        "name": "Connect",
-        "value": 136
-    },
-    {
-        "name": "To",
-        "value": 67
-    },
-    {
-        "name": "From",
-        "value": 266
-    }
-  ],
-  "dns-blacklist" : [
-    {
-        "name": "50.225.183.14",
-        "value": 1
-    },
-    {
-        "name": "246.248.6.17",
-        "value": 2
-    },
-    {
-        "name": "206.166.89.18",
-        "value": 1
-    }
-  ],
+    ],
+    "email-blacklist" : [
+      {
+        "name": "Email blacklist",
+        "series": [
+          {
+            "name": "Connect",
+            "value": 136
+          },
+          {
+              "name": "To",
+              "value": 67
+          },
+          {
+              "name": "From",
+              "value": 266
+          }
+        ]
+      }
+    ],
+    "dns-blacklist" : [
+      {
+        "name": "DNS blacklist",
+        "series": [
+          {
+            "name": "50.225.183.14",
+            "value": 1
+          },
+          {
+              "name": "246.248.6.17",
+              "value": 2
+          },
+          {
+              "name": "206.166.89.18",
+              "value": 1
+          }
+        ]
+      }
+    ],
   "incidents-over-week" : [
     {
       "name": "Critical risk",
@@ -463,6 +474,220 @@
           "value": 2
         }
         ]
+    }
+  ],
+  "time-to-response" : [
+    {
+      "name": "time to response",
+      "series": [
+        {
+          "name": "0:00",
+          "value": 8.5
+        },
+        {
+          "name": "1:00",
+          "value": 4.8
+        },
+        {
+          "name": "2:00",
+          "value": 2.5
+        },
+        {
+          "name": "3:00",
+          "value": 2.1
+        },
+        {
+          "name": "4:00",
+          "value": 3.5
+        },
+        {
+          "name": "5:00",
+          "value": 5.6
+        },
+        {
+          "name": "6:00",
+          "value": 12.0
+        },
+        {
+          "name": "7:00",
+          "value": 15.0
+        },
+        {
+          "name": "8:00",
+          "value": 19.0
+        },
+        {
+          "name": "9:00",
+          "value": 22.0
+        },
+        {
+          "name": "10:00",
+          "value": 23.0
+        },
+        {
+          "name": "11:00",
+          "value": 21.5
+        },
+        {
+          "name": "12:00",
+          "value": 19.0
+        },
+        {
+          "name": "13:00",
+          "value": 19.5
+        },
+        {
+          "name": "14:00",
+          "value": 20.8
+        },
+        {
+          "name": "15:00",
+          "value": 25.5
+        },
+        {
+          "name": "16:00",
+          "value": 27.8
+        },
+        {
+          "name": "17:00",
+          "value": 24.4
+        },
+        {
+          "name": "18:00",
+          "value": 22.4
+        },
+        {
+          "name": "19:00",
+          "value": 19.0
+        },
+        {
+          "name": "20:00",
+          "value": 17.5
+        },
+        {
+          "name": "21:00",
+          "value": 16.5
+        },
+        {
+          "name": "22:00",
+          "value": 16.3
+        },
+        {
+          "name": "23:00",
+          "value": 8.5
+        },
+        {
+          "name": "24:00",
+          "value": 8.1
+        }
+      ]
+    }
+  ],
+  "time-to-solve" : [
+    {
+      "name": "time to solve an incident",
+      "series": [
+        {
+          "name": "0:00",
+          "value": 2.7
+        },
+        {
+          "name": "1:00",
+          "value": 2.7
+        },
+        {
+          "name": "2:00",
+          "value": 2.6
+        },
+        {
+          "name": "3:00",
+          "value": 2.6
+        },
+        {
+          "name": "4:00",
+          "value": 2.6
+        },
+        {
+          "name": "5:00",
+          "value": 2.2
+        },
+        {
+          "name": "6:00",
+          "value": 2.8
+        },
+        {
+          "name": "7:00",
+          "value": 3.8
+        },
+        {
+          "name": "8:00",
+          "value": 2.7
+        },
+        {
+          "name": "9:00",
+          "value": 2.7
+        },
+        {
+          "name": "10:00",
+          "value": 2.6
+        },
+        {
+          "name": "11:00",
+          "value": 2.6
+        },
+        {
+          "name": "12:00",
+          "value": 2.1
+        },
+        {
+          "name": "13:00",
+          "value": 2.2
+        },
+        {
+          "name": "14:00",
+          "value": 2.7
+        },
+        {
+          "name": "15:00",
+          "value": 3.1
+        },
+        {
+          "name": "16:00",
+          "value": 2.9
+        },
+        {
+          "name": "17:00",
+          "value": 2.7
+        },
+        {
+          "name": "18:00",
+          "value": 2.6
+        },
+        {
+          "name": "19:00",
+          "value": 2.5
+        },
+        {
+          "name": "20:00",
+          "value": 2.3
+        },
+        {
+          "name": "21:00",
+          "value": 2.2
+        },
+        {
+          "name": "22:00",
+          "value": 2.1
+        },
+        {
+          "name": "23:00",
+          "value": 1.9
+        },
+        {
+          "name": "24:00",
+          "value": 1.8
+        }
+      ]
     }
   ]
 }

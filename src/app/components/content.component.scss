@@ -1,3 +1,5 @@
+@import './../app.component.scss';
+
 .chart-div {
     position: relative;
     display: flex;
@@ -93,9 +95,7 @@
     padding-right: .5rem;
     padding-left: .5rem;
     border-radius: 10rem;
-    background-color: #59CBB3!important;
     margin-left: .1rem!important;
-    color: #fff!important;
     font-size: 12px;
     vertical-align: super;
 }
@@ -125,5 +125,29 @@ incidents-table {
 ::ng-deep {
     .item-percent {
         display: none;
+    }
+
+    .stacked-chart {
+        .chart-heading {
+            height: 25px;
+        }
+        .ngx-charts {
+            margin-top: 5px;
+        }
+        .chart-legend {
+            margin-left: 15px;
+            margin-right: 15px;
+            .legend-wrap {
+                width: calc(100% - 30px);
+            }
+            .legend-labels.horizontal-legend{
+                max-height: unset !important;
+                padding-left: 10px !important;
+            }
+            .legend-title {
+                display: none;
+            }
+        }
+
     }
 }

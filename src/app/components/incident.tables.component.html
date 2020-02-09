@@ -1,169 +1,344 @@
-<mat-tab-group>
-  <mat-tab label="General">
-    <ng-template matTabContent>
-      <!-- FIRST CONTENT -->    
-      <table mat-table [dataSource]="dataSource" multiTemplateDataRows>
-        <!-- id Column -->
-        <ng-container matColumnDef="id">
-          <th mat-header-cell *matHeaderCellDef>#</th>
-          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-        </ng-container>
-        <!-- Subject Column -->
-        <ng-container matColumnDef="subject">
-          <th mat-header-cell *matHeaderCellDef>Subject</th>
-          <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
-        </ng-container>
-        <!-- Status Column -->
-        <ng-container matColumnDef="status">
-          <th mat-header-cell *matHeaderCellDef>Status</th>
-          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-        </ng-container>
-        <!-- Priority Column -->
-        <ng-container matColumnDef="priority">
-          <th mat-header-cell *matHeaderCellDef>Priority</th>
-          <td mat-cell *matCellDef="let element"           
-          [ngClass]="{
-              'critical-priority' : element.priority == 'critical',
-              'medium-priority' : element.priority == 'medium',
-              'low-priority' : element.priority == 'low'
-          }">
-          <span *ngIf="element.priority == 'critical'" class="lnr lnr-cross-circle"></span>
-          <span *ngIf="element.priority == 'medium'" class="lnr lnr-warning"></span>
-          <span *ngIf="element.priority == 'low'" class="lnr lnr-arrow-down"></span>
-          {{element.priority}} </td>
-        </ng-container>
-        <!-- Updated Column -->
-        <ng-container matColumnDef="updated">
-          <th mat-header-cell *matHeaderCellDef>Updated</th>
-          <td mat-cell *matCellDef="let element"> {{element.updated | date}} </td>
-        </ng-container>
+<div clas="row" style="display: flex;">
+  <div class="col-6">
+    <mat-tab-group>
+      <mat-tab label="General (19)">
+        <ng-template matTabContent>
+          <!-- FIRST CONTENT -->    
+          <table mat-table [dataSource]="dataSource" multiTemplateDataRows>
+            <!-- id Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef>#</th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+            <!-- Subject Column -->
+            <ng-container matColumnDef="subject">
+              <th mat-header-cell *matHeaderCellDef>Subject</th>
+              <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
+            </ng-container>
+            <!-- Status Column -->
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef>Status</th>
+              <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+            </ng-container>
+            <!-- Priority Column -->
+            <ng-container matColumnDef="priority">
+              <th mat-header-cell *matHeaderCellDef>Priority</th>
+              <td mat-cell *matCellDef="let element"           
+              [ngClass]="{
+                  'critical-priority' : element.priority == 'critical',
+                  'medium-priority' : element.priority == 'medium',
+                  'low-priority' : element.priority == 'low'
+              }">
+              <span *ngIf="element.priority == 'critical'" class="lnr lnr-cross-circle"></span>
+              <span *ngIf="element.priority == 'medium'" class="lnr lnr-warning"></span>
+              <span *ngIf="element.priority == 'low'" class="lnr lnr-arrow-down"></span>
+              {{element.priority}} </td>
+            </ng-container>
+            <!-- Updated Column -->
+            <ng-container matColumnDef="updated">
+              <th mat-header-cell *matHeaderCellDef>Updated</th>
+              <td mat-cell *matCellDef="let element"> {{element.updated | date}} </td>
+            </ng-container>
 
-        <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
-        <ng-container matColumnDef="expandedDetail">
-          <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
-            <div class="example-element-detail"
-                  [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-              <div class="example-element-description">
-                <strong>Last comment [USER123]</strong>: {{element.description}}
-              </div>
-            </div>
-          </td>
-        </ng-container>
+            <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+            <ng-container matColumnDef="expandedDetail">
+              <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+                <div class="example-element-detail"
+                      [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                  <div class="example-element-description">
+                    <strong>Last comment [USER123]</strong>: {{element.description}}
+                  </div>
+                </div>
+              </td>
+            </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-        <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
-            class="example-element-row"
-            [class.example-expanded-row]="expandedElement === element"
-            (click)="expandedElement = expandedElement === element ? null : element">
-        </tr>
-        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
-      </table>
-    
-      <mat-paginator [pageSizeOptions]="[3, 5, 10, 20]" showFirstLastButtons></mat-paginator>
-    </ng-template>
-  </mat-tab>
-  <mat-tab label="Automatic">
-    <ng-template matTabContent>
-      <!-- SECOND CONTENT -->
-      <div class="mat-elevation">
-        <table mat-table [dataSource]="dataSource">
-          <!-- id Column -->
-          <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>#</th>
-            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-          </ng-container>
-      
-          <!-- Subject Column -->
-          <ng-container matColumnDef="subject">
-            <th mat-header-cell *matHeaderCellDef>Subject</th>
-            <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
-          </ng-container>
-      
-          <!-- Status Column -->
-          <ng-container matColumnDef="status">
-            <th mat-header-cell *matHeaderCellDef>Status</th>
-            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-          </ng-container>
-      
-          <!-- Priority Column -->
-          <ng-container matColumnDef="priority">
-            <th mat-header-cell *matHeaderCellDef>Priority</th>
-            <td mat-cell *matCellDef="let element"           
-            [ngClass]="{
-                'critical-priority' : element.priority == 'critical',
-                'medium-priority' : element.priority == 'medium',
-                'low-priority' : element.priority == 'low'
-            }">
-            <span *ngIf="element.priority == 'critical'" class="lnr lnr-cross-circle"></span>
-            <span *ngIf="element.priority == 'medium'" class="lnr lnr-warning"></span>
-            <span *ngIf="element.priority == 'low'" class="lnr lnr-arrow-down"></span>
-            {{element.priority}} </td>
-          </ng-container>
-    
-          <!-- Updated Column -->
-          <ng-container matColumnDef="updated">
-            <th mat-header-cell *matHeaderCellDef>Updated</th>
-            <td mat-cell *matCellDef="let element"> {{element.updated | date}} </td>
-          </ng-container>
-      
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-    
-        <mat-paginator [pageSizeOptions]="[3, 5, 10, 20]" showFirstLastButtons></mat-paginator>
-      </div>
-    </ng-template>
-  </mat-tab>
-  <mat-tab label="Info">
-    <ng-template matTabContent>
-      <div class="mat-elevation">
-        <!-- THIRD CONTENT -->
-        <table mat-table [dataSource]="dataSource">
-          <!-- id Column -->
-          <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>#</th>
-            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-          </ng-container>
-      
-          <!-- Subject Column -->
-          <ng-container matColumnDef="subject">
-            <th mat-header-cell *matHeaderCellDef>Subject</th>
-            <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
-          </ng-container>
-      
-          <!-- Status Column -->
-          <ng-container matColumnDef="status">
-            <th mat-header-cell *matHeaderCellDef>Status</th>
-            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-          </ng-container>
-      
-          <!-- Priority Column -->
-          <ng-container matColumnDef="priority">
-            <th mat-header-cell *matHeaderCellDef>Priority</th>
-            <td mat-cell *matCellDef="let element"           
-            [ngClass]="{
-                'critical-priority' : element.priority == 'critical',
-                'medium-priority' : element.priority == 'medium',
-                'low-priority' : element.priority == 'low'
-            }">
-            <span *ngIf="element.priority == 'critical'" class="lnr lnr-cross-circle"></span>
-            <span *ngIf="element.priority == 'medium'" class="lnr lnr-warning"></span>
-            <span *ngIf="element.priority == 'low'" class="lnr lnr-arrow-down"></span>
-            {{element.priority}} </td>
-          </ng-container>
-    
-          <!-- Updated Column -->
-          <ng-container matColumnDef="updated">
-            <th mat-header-cell *matHeaderCellDef>Updated</th>
-            <td mat-cell *matCellDef="let element"> {{element.updated | date}} </td>
-          </ng-container>
-      
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-    
-        <mat-paginator [pageSizeOptions]="[3, 5, 10, 20]" showFirstLastButtons></mat-paginator>
-      </div>
-    </ng-template>
-  </mat-tab>
-</mat-tab-group>
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+                class="example-element-row"
+                [class.example-expanded-row]="expandedElement === element"
+                (click)="expandedElement = expandedElement === element ? null : element">
+            </tr>
+            <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[3, 5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Automatic (47)">
+        <ng-template matTabContent>
+          <!-- SECOND CONTENT -->
+          <div class="mat-elevation">
+            <table mat-table [dataSource]="dataSource">
+              <!-- id Column -->
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>#</th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+              </ng-container>
+          
+              <!-- Subject Column -->
+              <ng-container matColumnDef="subject">
+                <th mat-header-cell *matHeaderCellDef>Subject</th>
+                <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
+              </ng-container>
+          
+              <!-- Status Column -->
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef>Status</th>
+                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+              </ng-container>
+          
+              <!-- Priority Column -->
+              <ng-container matColumnDef="priority">
+                <th mat-header-cell *matHeaderCellDef>Priority</th>
+                <td mat-cell *matCellDef="let element"           
+                [ngClass]="{
+                    'critical-priority' : element.priority == 'critical',
+                    'medium-priority' : element.priority == 'medium',
+                    'low-priority' : element.priority == 'low'
+                }">
+                <span *ngIf="element.priority == 'critical'" class="lnr lnr-cross-circle"></span>
+                <span *ngIf="element.priority == 'medium'" class="lnr lnr-warning"></span>
+                <span *ngIf="element.priority == 'low'" class="lnr lnr-arrow-down"></span>
+                {{element.priority}} </td>
+              </ng-container>
+        
+              <!-- Updated Column -->
+              <ng-container matColumnDef="updated">
+                <th mat-header-cell *matHeaderCellDef>Updated</th>
+                <td mat-cell *matCellDef="let element"> {{element.updated | date}} </td>
+              </ng-container>
+          
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        
+            <mat-paginator [pageSizeOptions]="[3, 5, 10, 20]" showFirstLastButtons></mat-paginator>
+          </div>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Info (23)">
+        <ng-template matTabContent>
+          <div class="mat-elevation">
+            <!-- THIRD CONTENT -->
+            <table mat-table [dataSource]="dataSource">
+              <!-- id Column -->
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>#</th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+              </ng-container>
+          
+              <!-- Subject Column -->
+              <ng-container matColumnDef="subject">
+                <th mat-header-cell *matHeaderCellDef>Subject</th>
+                <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
+              </ng-container>
+          
+              <!-- Status Column -->
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef>Status</th>
+                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+              </ng-container>
+          
+              <!-- Priority Column -->
+              <ng-container matColumnDef="priority">
+                <th mat-header-cell *matHeaderCellDef>Priority</th>
+                <td mat-cell *matCellDef="let element"           
+                [ngClass]="{
+                    'critical-priority' : element.priority == 'critical',
+                    'medium-priority' : element.priority == 'medium',
+                    'low-priority' : element.priority == 'low'
+                }">
+                <span *ngIf="element.priority == 'critical'" class="lnr lnr-cross-circle"></span>
+                <span *ngIf="element.priority == 'medium'" class="lnr lnr-warning"></span>
+                <span *ngIf="element.priority == 'low'" class="lnr lnr-arrow-down"></span>
+                {{element.priority}} </td>
+              </ng-container>
+        
+              <!-- Updated Column -->
+              <ng-container matColumnDef="updated">
+                <th mat-header-cell *matHeaderCellDef>Updated</th>
+                <td mat-cell *matCellDef="let element"> {{element.updated | date}} </td>
+              </ng-container>
+          
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        
+            <mat-paginator [pageSizeOptions]="[3, 5, 10, 20]" showFirstLastButtons></mat-paginator>
+          </div>
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+  <div class="col-6">
+    <mat-tab-group>
+      <mat-tab label="General (4)">
+        <ng-template matTabContent>
+          <!-- FIRST CONTENT -->    
+          <table mat-table [dataSource]="dataSourceAssigned" multiTemplateDataRows>
+            <!-- id Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef>#</th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+            <!-- Subject Column -->
+            <ng-container matColumnDef="subject">
+              <th mat-header-cell *matHeaderCellDef>Subject</th>
+              <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
+            </ng-container>
+            <!-- Status Column -->
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef>Status</th>
+              <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+            </ng-container>
+            <!-- Priority Column -->
+            <ng-container matColumnDef="priority">
+              <th mat-header-cell *matHeaderCellDef>Priority</th>
+              <td mat-cell *matCellDef="let element"           
+              [ngClass]="{
+                  'critical-priority' : element.priority == 'critical',
+                  'medium-priority' : element.priority == 'medium',
+                  'low-priority' : element.priority == 'low'
+              }">
+              <span *ngIf="element.priority == 'critical'" class="lnr lnr-cross-circle"></span>
+              <span *ngIf="element.priority == 'medium'" class="lnr lnr-warning"></span>
+              <span *ngIf="element.priority == 'low'" class="lnr lnr-arrow-down"></span>
+              {{element.priority}} </td>
+            </ng-container>
+            <!-- Updated Column -->
+            <ng-container matColumnDef="updated">
+              <th mat-header-cell *matHeaderCellDef>Updated</th>
+              <td mat-cell *matCellDef="let element"> {{element.updated | date}} </td>
+            </ng-container>
+
+            <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+            <ng-container matColumnDef="expandedDetail">
+              <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+                <div class="example-element-detail"
+                      [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                  <div class="example-element-description">
+                    <strong>Last comment [USER123]</strong>: {{element.description}}
+                  </div>
+                </div>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+                class="example-element-row"
+                [class.example-expanded-row]="expandedElement === element"
+                (click)="expandedElement = expandedElement === element ? null : element">
+            </tr>
+            <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[3, 5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Automatic (1)">
+        <ng-template matTabContent>
+          <!-- SECOND CONTENT -->
+          <div class="mat-elevation">
+            <table mat-table [dataSource]="dataSource">
+              <!-- id Column -->
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>#</th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+              </ng-container>
+          
+              <!-- Subject Column -->
+              <ng-container matColumnDef="subject">
+                <th mat-header-cell *matHeaderCellDef>Subject</th>
+                <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
+              </ng-container>
+          
+              <!-- Status Column -->
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef>Status</th>
+                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+              </ng-container>
+          
+              <!-- Priority Column -->
+              <ng-container matColumnDef="priority">
+                <th mat-header-cell *matHeaderCellDef>Priority</th>
+                <td mat-cell *matCellDef="let element"           
+                [ngClass]="{
+                    'critical-priority' : element.priority == 'critical',
+                    'medium-priority' : element.priority == 'medium',
+                    'low-priority' : element.priority == 'low'
+                }">
+                <span *ngIf="element.priority == 'critical'" class="lnr lnr-cross-circle"></span>
+                <span *ngIf="element.priority == 'medium'" class="lnr lnr-warning"></span>
+                <span *ngIf="element.priority == 'low'" class="lnr lnr-arrow-down"></span>
+                {{element.priority}} </td>
+              </ng-container>
+        
+              <!-- Updated Column -->
+              <ng-container matColumnDef="updated">
+                <th mat-header-cell *matHeaderCellDef>Updated</th>
+                <td mat-cell *matCellDef="let element"> {{element.updated | date}} </td>
+              </ng-container>
+          
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        
+            <mat-paginator [pageSizeOptions]="[3, 5, 10, 20]" showFirstLastButtons></mat-paginator>
+          </div>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Info (3)">
+        <ng-template matTabContent>
+          <div class="mat-elevation">
+            <!-- THIRD CONTENT -->
+            <table mat-table [dataSource]="dataSource">
+              <!-- id Column -->
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>#</th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+              </ng-container>
+          
+              <!-- Subject Column -->
+              <ng-container matColumnDef="subject">
+                <th mat-header-cell *matHeaderCellDef>Subject</th>
+                <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
+              </ng-container>
+          
+              <!-- Status Column -->
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef>Status</th>
+                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+              </ng-container>
+          
+              <!-- Priority Column -->
+              <ng-container matColumnDef="priority">
+                <th mat-header-cell *matHeaderCellDef>Priority</th>
+                <td mat-cell *matCellDef="let element"           
+                [ngClass]="{
+                    'critical-priority' : element.priority == 'critical',
+                    'medium-priority' : element.priority == 'medium',
+                    'low-priority' : element.priority == 'low'
+                }">
+                <span *ngIf="element.priority == 'critical'" class="lnr lnr-cross-circle"></span>
+                <span *ngIf="element.priority == 'medium'" class="lnr lnr-warning"></span>
+                <span *ngIf="element.priority == 'low'" class="lnr lnr-arrow-down"></span>
+                {{element.priority}} </td>
+              </ng-container>
+        
+              <!-- Updated Column -->
+              <ng-container matColumnDef="updated">
+                <th mat-header-cell *matHeaderCellDef>Updated</th>
+                <td mat-cell *matCellDef="let element"> {{element.updated | date}} </td>
+              </ng-container>
+          
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        
+            <mat-paginator [pageSizeOptions]="[3, 5, 10, 20]" showFirstLastButtons></mat-paginator>
+          </div>
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

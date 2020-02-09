@@ -1,22 +1,5 @@
 <div class="row">
-    <div class="col-2">           
-        <div class="chart-div">
-            <div class="chart-parent" style="height:250px">
-                <div class="traffic-light">
-                    <div class="lights">
-                        <div class="light red-bg not-active"></div>
-                        <div class="light orange-bg not-active"></div>
-                        <div class="light green-bg"></div>
-                    </div>
-                    <div class="labels">
-                        <div class="light-label"><span class="error-color not-active">NOK</span></div>
-                        <div class="light-label"><span class="warning-color not-active">Exposed</span></div>
-                        <div class="light-label"><span class="ok-color">OK</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!--
     <div class="col-3">           
         <div class="chart-div">
             <div class="chart-heading">
@@ -77,72 +60,89 @@
             </div>
         </div>
     </div>
+    -->
 </div>
 
 <div class="row">
-    <div class="col-6" style="padding-left: 0px; padding-right: 0px;">
-        <div style="display: flex;">
-            <div class="col-6">      
-                <div class="chart-div">
-                    <div class="chart-parent" style="height:105px">
-                        <div class="widget-class">
-                            <div class="widget-icon">
-                                <span class="lnr lnr-warning error-color" style="margin-bottom: 5px;"></span>
-                            </div>
-                            <div class="widget-content">
-                                <div class="widget-number">31</div>
-                                <div class="widget-subheading">Unresolved incidents</div>
-                            </div>
+    <div class="col-1">           
+        <div class="chart-div">
+            <div class="chart-parent" style="height:285px">
+                <div class="traffic-light">
+                    <div class="lights">
+                        <div class="light red-bg not-active"></div>
+                        <div class="light orange-bg not-active"></div>
+                        <div class="light green-bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+                
+        <div class="chart-div">
+            <div class="chart-parent row" style="height:105px;">
+                <div class="widget-class col-4">
+                    <div class="widget-icon">
+                        <span class="lnr lnr-warning error-color" style="margin-bottom: 5px;"></span>
+                    </div>
+                    <div class="widget-content">
+                        <div class="widget-number">31 <span class="badge red-badge">+ 10</span></div>
+                        <div class="widget-subheading">Unresolved incidents</div>
+                    </div>
+                </div>
+                <div class="widget-class col-4">
+                    <div class="widget-icon">
+                        <span class="lnr lnr lnr-checkmark-circle ok-color" style="margin-left: 10px"></span>
+                    </div>
+                    <div class="widget-content">
+                        <div class="widget-number">7</div>
+                        <div class="widget-subheading">Solved Incidents (today)</div>
+                    </div>
+                </div>
+                <div class="widget-class col-4">
+                    <div class="widget-class">
+                        <div class="widget-icon">
+                            <span class="lnr lnr-hand warning-color"></span>
+                        </div>
+                        <div class="widget-content">
+                            <div class="widget-number">15  <span class="badge green-badge">- 2</span></div>
+                            <div class="widget-subheading">Untouched incidents</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-6">      
-                <div class="chart-div">
-                    <div class="chart-parent" style="height:105px">
-                        <div class="widget-class">
-                            <div class="widget-icon">
-                                <span class="lnr lnr lnr-checkmark-circle ok-color" style="margin-left: 10px"></span>
-                            </div>
-                            <div class="widget-content">
-                                <div class="widget-number">7 <span class="badge">Today</span></div>
-                                <div class="widget-subheading">Solved Incidents</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
         </div>
 
             <div style="display: flex;">
-                <div class="col-6">      
+                <div class="col-6" style="padding-left:0px;">     
                     <div class="chart-div">
-                        <div class="chart-parent" style="height:105px">
-                            <div class="widget-class">
-                                <div class="widget-icon">
-                                    <span class="lnr lnr-history warning-color" style="margin-left: 10px"></span>
-                                </div>
-                                <div class="widget-content">
-                                    <div class="widget-number">8.1 hours <span class="lnr lnr-arrow-down ok-color"></span></div>
-                                    <div class="widget-subheading">Avg. response time</div>
-                                </div>
-                            </div>
+                        <div class="chart-heading">
+                            Avg. response time
+                        </div>
+                        <div class="chart-parent line-chart-with-number" style="height:90px">
+                            <ngx-charts-line-chart
+                                [view]="view"
+                                [scheme]="timeToColorScheme"
+                                [results]="timeToResponseGraph"
+                                [autoScale]="true">
+                            </ngx-charts-line-chart>
+                            <div class="widget-number"><span class="number">8.1</span> hours</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-6">      
+                <div class="col-6" style="padding-right:0px;">       
                     <div class="chart-div">
-                        <div class="chart-parent" style="height:105px">
-                            <div class="widget-class">
-                                <div class="widget-icon">
-                                    <span class="lnr lnr-clock warning-color" style="margin-left: 10px"></span>
-                                </div>
-                                <div class="widget-content">
-                                    <div class="widget-number">1.8 hours <span class="lnr lnr-arrow-up error-color"></span></div>
-                                    <div class="widget-subheading">Avg. time to solve an incident</div>
-                                </div>
-                            </div>
+                        <div class="chart-heading">
+                            Avg. time to solve an incident
+                        </div>
+                        <div class="chart-parent line-chart-with-number" style="height:90px;">
+                            <ngx-charts-line-chart
+                                [view]="view"
+                                [scheme]="timeToColorScheme"
+                                [results]="timeToSolveGraph"
+                                [autoScale]="true">
+                            </ngx-charts-line-chart>
+                            <div class="widget-number"><span class="number">1.7</span> hours</div>
                         </div>
                     </div>
                 </div>
@@ -150,12 +150,12 @@
 
         </div>
 
-        <div class="col-6">      
+        <div class="col-5">      
             <div class="chart-div">
                 <div class="chart-heading">
                     Number of incidents over a week
                 </div>
-                <div class="chart-parent" style="height:200px">
+                <div class="chart-parent" style="height:235px">
                         <ngx-charts-line-chart
                         [view]="view"
                         [scheme]="colorScheme"
@@ -173,56 +173,62 @@
 
 <div class="row">
     <div class="col-4">
-        <div class="chart-div">
+        <div class="chart-div stacked-chart">
             <div class="chart-heading">
                 IP Blacklist
             </div>
-            <div class="chart-parent" style="height:120px">
-                <!-- IP Blacklist -->       
-                <ngx-charts-advanced-pie-chart
+            <div class="chart-parent" style="height:50px">
+                <!-- IP Blacklist -->   
+                <ngx-charts-bar-horizontal-stacked
                     [view]="view"
-                    [scheme]="colorScheme"
+                    [scheme]="IPColorScheme"
                     [results]="IpBlacklist"
+                    [legend]="true"
+                    [legendPosition]="'below'"
                     [gradient]="false">
-                </ngx-charts-advanced-pie-chart>
+                 </ngx-charts-bar-horizontal-stacked>  
             </div>
-            <div style="height:15px">
+            <div style="height:45px">
             </div>
         </div>
     </div>
     <div class="col-4">
-        <div class="chart-div">
+        <div class="chart-div stacked-chart">
             <div class="chart-heading">
                 E-mail Blacklist
             </div>
-            <div class="chart-parent" style="height:120px">
+            <div class="chart-parent" style="height:50px">
                 <!-- EMAIL Blacklist -->       
-                <ngx-charts-advanced-pie-chart
+                <ngx-charts-bar-horizontal-stacked
                     [view]="view"
-                    [scheme]="colorScheme"
+                    [scheme]="EmailColorScheme"
                     [results]="EmailBlacklist"
+                    [legend]="true"
+                    [legendPosition]="'below'"
                     [gradient]="false">
-                </ngx-charts-advanced-pie-chart>
+                </ngx-charts-bar-horizontal-stacked>  
             </div>
-            <div style="height:15px">
+            <div style="height:45px">
             </div>
         </div>
     </div>
     <div class="col-4">
-        <div class="chart-div">
+        <div class="chart-div stacked-chart">
             <div class="chart-heading">
                 DNS Blacklist
             </div>
-            <div class="chart-parent" style="height:120px">
+            <div class="chart-parent" style="height:50px">
                 <!-- DNS Blacklist -->       
-                <ngx-charts-advanced-pie-chart
+                <ngx-charts-bar-horizontal-stacked
                     [view]="view"
-                    [scheme]="colorScheme"
+                    [scheme]="DNSColorScheme"
                     [results]="DnsBlacklist"
+                    [legend]="true"
+                    [legendPosition]="'below'"
                     [gradient]="false">
-                </ngx-charts-advanced-pie-chart>
+                </ngx-charts-bar-horizontal-stacked>  
             </div>
-            <div style="height:15px">
+            <div style="height:45px">
             </div>
         </div>
     </div>

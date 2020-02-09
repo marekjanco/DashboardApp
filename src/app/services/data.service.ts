@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 import {Incident} from '../components/content.component';
-import {StatusChart, Blacklist, IncidentsOverWeek, Traffic} from '../components/ciso.component';
+import {StatusChart, Blacklist, IncidentsOverWeek, Traffic, TimeTo} from '../components/ciso.component';
 
 @Injectable()
 export class DataService {
@@ -11,15 +11,15 @@ export class DataService {
         console.log('initializing service');
     }
     getIncidentsByPriority(){
-        return this.http.get<Incident[]>('http://localhost:4000/incidents-by-priority').pipe(
+        return this.http.get<Incident>('http://localhost:4000/incidents-by-priority').pipe(
             map(res => res));
     }
     getIncidentsByCategory(){
-        return this.http.get<Incident[]>('http://localhost:4000/incidents-by-category').pipe(
+        return this.http.get<Incident>('http://localhost:4000/incidents-by-category').pipe(
             map(res => res));
     }    
     getIncidentsAssignedToMe(){
-        return this.http.get<Incident[]>('http://localhost:4000/incidents-assigned').pipe(
+        return this.http.get<Incident>('http://localhost:4000/incidents-assigned').pipe(
             map(res => res));
     }
     getStatus24h(){
@@ -44,6 +44,14 @@ export class DataService {
     }    
     getTraffic(){
         return this.http.get<Traffic>('http://localhost:4000/in-out-traffic').pipe(
+            map(res => res));
+    }
+    getTimeToResponse(){
+        return this.http.get<TimeTo>('http://localhost:4000/time-to-response').pipe(
+            map(res => res));
+    }
+    getTimeToSolve(){
+        return this.http.get<TimeTo>('http://localhost:4000/time-to-solve').pipe(
             map(res => res));
     }
 }

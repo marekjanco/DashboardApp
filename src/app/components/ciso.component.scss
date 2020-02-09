@@ -1,4 +1,5 @@
 @import './content.component.scss';
+@import './../app.component.scss';
 
 .traffic-light {
     display: flex;
@@ -35,15 +36,6 @@
     opacity: .1;
 }
 
-.red-bg {
-    background-color: #d92550!important;
-}
-.orange-bg {
-    background-color: #f7b924!important;
-}
-.green-bg {
-    background-color: #59CBB3!important;
-}
 .legend-labels.horizontal-legend{
     width: 120px !important;;
 }
@@ -52,4 +44,20 @@
 }
 .total-label {
     display: none;
+}
+
+
+.line-chart-with-number {
+    .widget-number {
+        position: absolute;
+        font-weight: bold;
+        font-size: 1.7em;
+        display: block;
+        line-height: 1;
+        left: 30%;
+        top: 40%;
+        .number {
+            font-size: 2.0em;
+        }
+    }
 }

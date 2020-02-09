@@ -21,6 +21,7 @@ export class IncidentsTableComponent {
   columnsToDisplay = ['id', 'subject', 'status', 'priority', 'updated'];
   expandedElement: PeriodicElement;
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  dataSourceAssigned = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA_ASSIGNED);
 
    constructor(private dataService: DataService){
    }
@@ -59,4 +60,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {id: 7, subject: 'blabla', status: 'open', priority: 'low', updated: new Date(), description: `Email was sent to customer on 12.1.2020.`},
   {id: 8, subject: 'xsdadasj', status: 'open', priority: 'medium', updated: new Date(), description: `Email was sent to customer on 12.1.2020.`},
   {id: 9, subject: 'aaaaa', status: 'open', priority: 'critical', updated: new Date(), description: `Email was sent to customer on 12.1.2020.`},
+];
+
+const ELEMENT_DATA_ASSIGNED: PeriodicElement[] = [
+  {id: 31, subject: 'Incident 1', status: 'open', priority: 'medium', updated: new Date(), description: `Email was sent to customer on 12.1.2020.`},
+  {id: 12, subject: 'Incident 2', status: 'resolved', priority: 'critical', updated: new Date(), description: `Email was sent to customer on 12.1.2020.`},
+  {id: 14, subject: 'Incident 3', status:  'open', priority: 'low', updated: new Date(), description: `Email was sent to customer on 12.1.2020.`},
+  {id: 5, subject: 'Incident 4', status: 'open', priority: 'low', updated: new Date(), description: `Email was sent to customer on 12.1.2020.`},
 ];
