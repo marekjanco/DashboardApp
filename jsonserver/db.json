@@ -73,15 +73,15 @@
         "name": "Incidents by priority",
         "series": [
           {
-            "name": "Critical",
+            "name": "Critical - 9",
             "value": 9
           },
           {
-              "name": "Medium",
+              "name": "Medium - 16",
               "value": 16
           },
           {
-              "name": "Low",
+              "name": "Low - 6",
               "value": 6
           }
         ]
@@ -92,15 +92,15 @@
         "name": "Incidents assigned",
         "series": [
           {
-            "name": "Critical",
+            "name": "Critical - 1",
             "value": 1
           },
           {
-              "name": "Medium",
+              "name": "Medium - 3",
               "value": 3
           },
           {
-              "name": "Low",
+              "name": "Low - 5",
               "value": 5
           }
         ]
@@ -111,15 +111,15 @@
         "name": "IP blacklist",
         "series": [
           {
-              "name": "Telnet",
+              "name": "Telnet - 856",
               "value": 856
           },
           {
-              "name": "Scan detection",
+              "name": "Scan detection - 5094",
               "value": 5094
           },
           {
-              "name": "Word",
+              "name": "Word - 352",
               "value": 352
           }
         ]
@@ -130,15 +130,15 @@
         "name": "Email blacklist",
         "series": [
           {
-            "name": "Connect",
+            "name": "Connect - 136",
             "value": 136
           },
           {
-              "name": "To",
+              "name": "To - 67",
               "value": 67
           },
           {
-              "name": "From",
+              "name": "From - 266",
               "value": 266
           }
         ]
@@ -149,119 +149,142 @@
         "name": "DNS blacklist",
         "series": [
           {
-            "name": "50.225.183.14",
+            "name": "50.225.183.14 - 1",
             "value": 1
           },
           {
-              "name": "246.248.6.17",
+              "name": "246.248.6.17 - 2",
               "value": 2
           },
           {
-              "name": "206.166.89.18",
+              "name": "206.166.89.18 - 1",
               "value": 1
           }
         ]
       }
     ],
+
+
+    
   "incidents-over-week" : [
     {
-      "name": "Critical risk",
+      "name": "Mon",
       "series": [
         {
-          "name": "Mon",
+          "name": "Critical risks",
           "value": 54
         },
         {
-          "name": "Tue",
-          "value": 42
-        },
-        {
-          "name": "Wed",
-          "value": 33
-        },
-        {
-          "name": "Thu",
-          "value": 29
-        },
-        {
-          "name": "Fri",
-          "value": 25
-        },
-        {
-          "name": "Sat",
-          "value": 26
-        },
-        {
-          "name": "Sun",
-          "value": 38
-        }
-        ]
-    },
-    {
-      "name": "Medium risk",
-      "series": [
-        {
-          "name": "Mon",
+          "name": "Medium risk",
           "value": 35
         },
         {
-          "name": "Tue",
+          "name": "Low risk",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "name": "Tue",
+      "series": [
+        {
+          "name": "Critical risks",
+          "value": 41
+        },
+        {
+          "name": "Medium risk",
           "value": 32
         },
         {
-          "name": "Wed",
-          "value": 36
-        },
+          "name": "Low risk",
+          "value": 35
+        }
+      ]
+    },
+    {
+      "name": "Wed",
+      "series": [
         {
-          "name": "Thu",
-          "value": 21
-        },
-        {
-          "name": "Fri",
-          "value": 31
-        },
-        {
-          "name": "Sat",
+          "name": "Critical risks",
           "value": 33
         },
         {
-          "name": "Sun",
-          "value": 35
+          "name": "Medium risk",
+          "value": 36
+        },
+        {
+          "name": "Low risk",
+          "value": 22
         }
-        ]
+      ]
     },
     {
-      "name": "Low risk",
+      "name": "Thu",
       "series": [
         {
-          "name": "Mon",
-          "value": 14
+          "name": "Critical risks",
+          "value": 25
         },
         {
-          "name": "Tue",
-          "value": 35
-        },
-        {
-          "name": "Wed",
-          "value": 22
-        },
-        {
-          "name": "Thu",
-          "value": 42
-        },
-        {
-          "name": "Fri",
+          "name": "Medium risk",
           "value": 21
         },
         {
-          "name": "Sat",
-          "value": 19
+          "name": "Low risk",
+          "value": 42
+        }
+      ]
+    },
+    {
+      "name": "Fri",
+      "series": [
+        {
+          "name": "Critical risks",
+          "value": 26
         },
         {
-          "name": "Sun",
-          "value": 48
+          "name": "Medium risk",
+          "value": 33
+        },
+        {
+          "name": "Low risk",
+          "value": 21
         }
-        ]
+      ]
+    },
+    {
+      "name": "Sat",
+      "series": [
+        {
+          "name": "Critical risks",
+          "value": 35
+        },
+        {
+          "name": "Medium risk",
+          "value": 35
+        },
+        {
+          "name": "Low risk",
+          "value": 19
+        }
+      ]
+    },
+    {
+      "name": "Sun",
+      "series": [
+        {
+          "name": "Critical risks",
+          "value": 41
+        },
+        {
+          "name": "Medium risk",
+          "value": 36
+        },
+        {
+          "name": "Low risk",
+          "value": 31
+        }
+      ]
     }
   ],
   "in-out-traffic" : [
@@ -476,6 +499,85 @@
         ]
     }
   ],
+  "alien-vault-threats": [ 
+    {
+           "description":"Compromised domains used to host landing pages  for phishing campaigns.",
+           "created":"2020-02-20T15:09:45.031000",
+           "id":"5e4ea139ced0c09404648230",
+           "name":"Phishing domains",
+           "author":"bright.consulting"
+    },
+    {
+           "author":"AlienVault", 
+           "description":"The Ukrainian gas company at the centre of President Donald Trump's impeachment was successfully hacked by Russian military agents in November, a US cybersecurity firm has said. The phishing domains were identified by ThreatConnect in December 2019 and Area1 in January 2020, and may be linked to Fancy Bear.",
+           "created":"2020-01-14T11:27:31.735000",
+           "id":"5e1da5a3ca48088035ce6c5a",
+           "name":"US firm says Russia hacked company at heart of Trump impeachment"
+    },
+    {
+           "author":"AlienVault",
+           "description":"Reverse engineer and dissect the rather unusual \"Mozart\" DNS TLD loader first flagged for research by @malwrhunterteam, focusing on the malware commands and communications.",
+           "created":"2020-02-19T17:44:12.694000",
+           "id":"5e4d73ecaa5b3fb1484b92cc",
+           "name":"Let's Learn: Diving Deeper into \"Mozart\" TLD Loader & DNS TLD Commands"
+    },
+    {
+           "description":"Continued targeted attacks from the North Korean linked attacker Kimsuky.",
+           "created":"2020-01-20T10:10:20.741000",
+           "author":"AlienVault",
+           "id":"5e257c8c189e48e8e053e75b",
+           "name":"Continued Kimsuky Activity"
+    },
+    {
+           "description":"Prevailion\u2019s Tailored Intelligence team has followed an active supply chain attack that has been ongoing since late 2017, we named this campaign \u201cPHPs Labyrinth.\u201d In this operation, threat actors have been able to surreptitiously install malicious files into a large number of Premium WordPress Themes and Plugins. We assess that the responsible party chose to target WordPress as it makes up 60% of all Content Management systems, and 34% of all websites on the internet. WordPress themes and plugins allow the average person to quickly and easily create a website through \u201cdrag and drop\u201d features, rather than coding an entire website themselves.",
+           "created":"2020-02-19T17:11:51.577000",
+           "author":"AlienVault",
+           "id":"5e257c8c189e48e8e053e75b",
+           "name":"Continued Kimsuky Activity"
+    },
+    {
+           "author":"AlienVault",
+           "description":"Prevailion\u2019s Tailored Intelligence team has followed an active supply chain attack that has been ongoing since late 2017, we named this campaign \u201cPHPs Labyrinth.\u201d In this operation, threat actors have been able to surreptitiously install malicious files into a large number of Premium WordPress Themes and Plugins. We assess that the responsible party chose to target WordPress as it makes up 60% of all Content Management systems, and 34% of all websites on the internet. WordPress themes and plugins allow the average person to quickly and easily create a website through \u201cdrag and drop\u201d features, rather than coding an entire website themselves.",
+           "created":"2020-02-19T17:11:51.577000",
+           "id":"5e4d6c5790faacd62f7afed6",
+           "name":"PHP\u2019s Labyrinth - Weaponized WordPress Themes & Plugins"
+    },
+    {
+           "description":"Multiple TA505 campaigns",
+           "created":"2019-09-11T11:37:46.040000",
+           "author":"AlienVault",
+           "id":"5d78dc8a0006495d5fb9296e",
+           "name":"Multiple TA505 campaigns"
+    },
+    {
+           "description":"Intezer research team has identified new versions of an old Linux malware known as Rekoobe, a minimalistic trojan with a complex CNC authentication protocol originally targeting SPARC and Intel x86, x86-64 systems back in 2015.",
+           "created":"2020-01-20T16:05:16.393000",
+           "author":"AlienVault",
+           "id":"5e25cfbcd7e22ce9b7d4ea71",
+           "name":"Linux Rekoobe Operating with New, Undetected Malware Samples"
+    },
+    {
+           "description":"\"AZORult has its history. However, a few days ago, we discovered what appears to be one of its most unusual campaigns: abusing the ProtonVPN service and dropping malware via fake ProtonVPN installers for Windows.\"",
+           "created":"2020-02-18T20:11:26.884000",
+           "author":"AlienVault",
+           "id":"5e4c44ee78e30307e4058616",
+           "name":"AZORult spreads as a fake ProtonVPN installer"
+    },
+    {
+           "description":"In 2019, Talent-Jump Technologies, Inc. reached out to Trend Micro about a backdoor they discovered during an incident response operation. We provided further intelligence and analysis on the backdoor, which we learned was being used by an advanced persistent threat (APT) actor that we dubbed \"DRBControl.\" The threat actor is currently targeting users in Southeast Asia, particularly gambling and betting companies. Europe and the Middle East were also reported to us as being targeted, but we could not confirm this at the time of writing. Exfiltrated data was mostly comprised of databases and source codes, which led us to believe that the group's main purpose is cyberespionage.",
+           "created":"2020-02-18T10:38:01.234000",
+           "author":"AlienVault",
+           "id":"5e4bbe896e6393eb79a1d2c9",
+           "name":"Operation DRBControl"
+    },
+    {
+           "description":"For years, we have tracked the espionage threat actor we call Black Banshee (also known in open source as Kimsuky). In 2019, it launched multiple parallel cyber espionage campaigns, from large-scale credential harvesting to narrowly targeted espionage and exfiltration operations.",
+           "created":"2020-02-18T17:06:17.599000",
+           "author":"AlienVault",
+           "id":"5e4c19894aad216887c8cb3d",
+           "name":"Tracking \u2018Kimsuky\u2019, the North Korea-based cyber espionage group"
+    }
+    ],
   "time-to-response" : [
     {
       "name": "time to response",

@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 import {Incident} from '../components/content.component';
+import {AlienvaultThreat} from '../components/incident.tables.component';
 import {StatusChart, Blacklist, IncidentsOverWeek, Traffic, TimeTo} from '../components/ciso.component';
 
 @Injectable()
@@ -52,6 +53,10 @@ export class DataService {
     }
     getTimeToSolve(){
         return this.http.get<TimeTo>('http://localhost:4000/time-to-solve').pipe(
+            map(res => res));
+    }
+    getAlienVaultThreats(){
+        return this.http.get<AlienvaultThreat[]>('http://localhost:4000/alien-vault-threats').pipe(
             map(res => res));
     }
 }

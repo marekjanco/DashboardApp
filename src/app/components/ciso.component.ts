@@ -26,7 +26,6 @@ export class CisoComponent {
             this.statusChart24h = value;
         });
         this.dataService.getIpBlacklist().subscribe((value: Blacklist) => {
-          console.log(value);
           this.IpBlacklist = value;
         });
         this.dataService.getDnsBlacklist().subscribe((value: Blacklist) => {
@@ -62,6 +61,9 @@ export class CisoComponent {
     }
     colorSchemeTraffic = {
       domain: [ '#59CBB3', '#d92550']
+    };
+    incidentsEasyColorScheme = {
+      domain: ['#e56785', '#f9cb5d', '#80d7c5']
     };
 
     IPColorScheme = {

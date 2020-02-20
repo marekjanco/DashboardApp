@@ -45,6 +45,7 @@ export class ContentComponent {
   view : any[]
 }
 
+
 export interface Incident {
   name: string;
   series: ItemArray[]; 

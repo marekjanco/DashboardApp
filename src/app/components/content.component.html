@@ -1,13 +1,13 @@
 <div class="row">
     <div class="col-3">           
         <div class="chart-div">
-            <div class="chart-parent" style="height:120px">
+            <div class="chart-parent" style="height:80px">
                 <div class="widget-class">
-                    <div class="widget-icon">
+                    <div class="widget-icon widget-offset" style="padding-left:10px;">
                         <span class="lnr lnr-warning error-color" style="margin-bottom: 5px;"></span>
                     </div>
                     <div class="widget-content">
-                        <div class="widget-number">31 <span class="badge red-badge">+ 10</span></div>
+                        <div class="widget-number">31 <span class="badge red-badge"><span class="fa fa-caret-up"></span> 10</span></div>
                         <div class="widget-subheading">Unresolved incidents</div>
                     </div>
                 </div>
@@ -16,9 +16,9 @@
     </div>
     <div class="col-3">           
         <div class="chart-div">
-            <div class="chart-parent" style="height:120px">
+            <div class="chart-parent" style="height:80px">
                 <div class="widget-class">
-                    <div class="widget-icon">
+                    <div class="widget-icon widget-offset">
                         <span class="lnr lnr-plus-circle" style="color: #59CBB3"></span>
                     </div>
                     <div class="widget-content">
@@ -30,9 +30,9 @@
         </div>
     </div>    <div class="col-3">
         <div class="chart-div">
-            <div class="chart-parent" style="height:120px">
+            <div class="chart-parent" style="height:80px">
                 <div class="widget-class">
-                    <div class="widget-icon">
+                    <div class="widget-icon widget-offset">
                         <span class="lnr lnr-hand warning-color"></span>
                     </div>
                     <div class="widget-content">
@@ -45,13 +45,13 @@
     </div>
     <div class="col-3">
         <div class="chart-div">
-            <div class="chart-parent" style="height:120px">
+            <div class="chart-parent" style="height:80px">
                 <div class="widget-class">
                     <div class="widget-icon">
                         <span class="lnr lnr-tag" style="color: #7AA3E5"></span>
                     </div>
                     <div class="widget-content">
-                        <div class="widget-number">7  <span class="badge green-badge">- 2</span></div>
+                        <div class="widget-number">9  <span class="badge green-badge"><span class="fa fa-caret-down"></span> 2</span></div>
                         <div class="widget-subheading">Incidents assigned to me</div>
                     </div>
                 </div>
@@ -65,9 +65,9 @@
     <div class="col-6">  
         <div class="chart-div stacked-chart">
             <div class="chart-heading pie-chart-header">
-                All Incidents by priority
+                All Incidents by priority (31)
             </div>
-            <div class="chart-parent" style="height:50px">
+            <div class="chart-parent no-legend-label no-margin-legend" style="height:50px">
                 <ngx-charts-bar-horizontal-stacked
                     [view]="view"
                     [scheme]="incidentsEasyColorScheme"
@@ -84,9 +84,9 @@
     <div class="col-6">  
         <div class="chart-div stacked-chart">
             <div class="chart-heading pie-chart-header">
-                Incidents assigned to me
+                Incidents assigned to me (9)
             </div>
-            <div class="chart-parent" style="height:50px">
+            <div class="chart-parent no-legend-label no-margin-legend" style="height:50px">
                 <ngx-charts-bar-horizontal-stacked
                     [view]="view"
                     [scheme]="incidentsEasyColorScheme"

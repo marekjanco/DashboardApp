@@ -59,6 +59,9 @@
                 margin: 0 1rem 0 0;
             }
         }
+        .widget-offset {
+            padding-left: 10px;
+        }
 
         .widget-content {
             display: flex;
@@ -88,18 +91,6 @@
 
 }
 
-.badge {
-    display: inline-block;
-    padding: 4px 10px;
-    text-align: center;
-    padding-right: .5rem;
-    padding-left: .5rem;
-    border-radius: 10rem;
-    margin-left: .1rem!important;
-    font-size: 12px;
-    vertical-align: super;
-}
-
 .chart-parent {
     display: flex !important;
     margin: 10px;
@@ -127,6 +118,10 @@ incidents-table {
         display: none;
     }
 
+    .ngx-charts-bar {
+            pointer-events: none;
+    }
+
     .stacked-chart {
         .chart-heading {
             height: 25px;
@@ -134,7 +129,11 @@ incidents-table {
         .ngx-charts {
             margin-top: 5px;
         }
+    }
+
+    .no-legend-label {
         .chart-legend {
+            margin-top: 15px;
             margin-left: 15px;
             margin-right: 15px;
             .legend-wrap {
@@ -144,10 +143,14 @@ incidents-table {
                 max-height: unset !important;
                 padding-left: 10px !important;
             }
-            .legend-title {
-                display: none;
-            }
         }
-
+        .legend-title {
+            display: none;
+        }
+    }
+    .no-margin-legend {
+        .chart-legend {
+            margin-top: 0px;
+        }
     }
 }

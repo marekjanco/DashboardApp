@@ -43,6 +43,18 @@
 }
 
 
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    text-align: center;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    border-radius: 10rem;
+    margin-left: .1rem!important;
+    font-size: 13px;
+    vertical-align: super;
+}
+
 .red-bg {
     background-color: #d92550!important;
 }

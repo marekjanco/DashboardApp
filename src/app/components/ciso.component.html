@@ -1,69 +1,4 @@
 <div class="row">
-    <!--
-    <div class="col-3">           
-        <div class="chart-div">
-            <div class="chart-heading">
-                System status in 24 hours
-            </div>
-            <div class="chart-parent" style="height:200px">
-                <ngx-charts-line-chart
-                [view]="view"
-                [results]="statusChart24h"
-                [scheme]="colorScheme"
-                [showGridLines]="false"
-                [xAxis]="true"
-                [yAxis]="true"
-                [legend]="false"
-                [yAxisTickFormatting]="yAxisTickFormatting"
-                [autoScale]="true">
-              </ngx-charts-line-chart>
-            </div>
-        </div>
-    </div>
-    <div class="col-3">           
-        <div class="chart-div">
-            <div class="chart-heading">
-                System status in 7 days
-            </div>
-            <div class="chart-parent" style="height:200px">
-                <ngx-charts-line-chart
-                [view]="view"
-                [results]="statusChart24h"
-                [scheme]="colorScheme"
-                [showGridLines]="false"
-                [xAxis]="true"
-                [yAxis]="true"
-                [legend]="false"
-                [yAxisTickFormatting]="yAxisTickFormatting"
-                [autoScale]="true">
-              </ngx-charts-line-chart>
-            </div>
-        </div>
-    </div>
-    <div class="col-4">
-        <div class="chart-div">
-            <div class="chart-heading">
-                System status in a month
-            </div>
-            <div class="chart-parent" style="height:200px">
-                <ngx-charts-line-chart
-                [view]="view"
-                [results]="statusChart24h"
-                [scheme]="colorScheme"
-                [showGridLines]="false"
-                [xAxis]="true"
-                [yAxis]="true"
-                [legend]="false"
-                [yAxisTickFormatting]="yAxisTickFormatting"
-                [autoScale]="true">
-              </ngx-charts-line-chart>
-            </div>
-        </div>
-    </div>
-    -->
-</div>
-
-<div class="row">
     <div class="col-1">           
         <div class="chart-div">
             <div class="chart-parent" style="height:285px">
@@ -86,7 +21,7 @@
                         <span class="lnr lnr-warning error-color" style="margin-bottom: 5px;"></span>
                     </div>
                     <div class="widget-content">
-                        <div class="widget-number">31 <span class="badge red-badge">+ 10</span></div>
+                        <div class="widget-number">31 <span class="badge red-badge"><span class="fa fa-caret-up"></span> 10</span></div>
                         <div class="widget-subheading">Unresolved incidents</div>
                     </div>
                 </div>
@@ -105,7 +40,7 @@
                             <span class="lnr lnr-hand warning-color"></span>
                         </div>
                         <div class="widget-content">
-                            <div class="widget-number">15  <span class="badge green-badge">- 2</span></div>
+                            <div class="widget-number">15  <span class="badge green-badge"><span class="fa fa-caret-down"></span> 2</span></div>
                             <div class="widget-subheading">Untouched incidents</div>
                         </div>
                     </div>
@@ -124,9 +59,10 @@
                                 [view]="view"
                                 [scheme]="timeToColorScheme"
                                 [results]="timeToResponseGraph"
-                                [autoScale]="true">
+                                [autoScale]="true"
+                                [tooltipDisabled]="true">
                             </ngx-charts-line-chart>
-                            <div class="widget-number"><span class="number">8.1</span> hours</div>
+                            <div class="widget-number"><span class="number">2.1</span> hours</div>
                         </div>
                     </div>
                 </div>
@@ -140,9 +76,10 @@
                                 [view]="view"
                                 [scheme]="timeToColorScheme"
                                 [results]="timeToSolveGraph"
-                                [autoScale]="true">
+                                [autoScale]="true"
+                                [tooltipDisabled]="true">
                             </ngx-charts-line-chart>
-                            <div class="widget-number"><span class="number">1.7</span> hours</div>
+                            <div class="widget-number"><span class="number">8.1</span> hours</div>
                         </div>
                     </div>
                 </div>
@@ -155,17 +92,18 @@
                 <div class="chart-heading">
                     Number of incidents over a week
                 </div>
-                <div class="chart-parent" style="height:235px">
-                        <ngx-charts-line-chart
-                        [view]="view"
-                        [scheme]="colorScheme"
-                        [results]="incidentsOverWeek"
-                        [xAxis]="true"
-                        [yAxis]="true"
-                        [autoScale]="true"
-                        [curve]="curveType"
-                        [legend]="true">
-                    </ngx-charts-line-chart>    
+                <div class="chart-parent no-legend-label" style="height:185px">
+                    <ngx-charts-bar-vertical-stacked
+                    [view]="view"
+                    [scheme]="incidentsEasyColorScheme"
+                    [results]="incidentsOverWeek"
+                    [xAxis]="true"
+                    [yAxis]="true"
+                    [legendPosition]="'below'"
+                    [legend]="true">
+                </ngx-charts-bar-vertical-stacked>
+                </div>
+                <div style="height:50px">
                 </div>
             </div>
         </div>
@@ -175,9 +113,9 @@
     <div class="col-4">
         <div class="chart-div stacked-chart">
             <div class="chart-heading">
-                IP Blacklist
+                IP Blacklist (6302)
             </div>
-            <div class="chart-parent" style="height:50px">
+            <div class="chart-parent no-legend-label no-margin-legend" style="height:50px">
                 <!-- IP Blacklist -->   
                 <ngx-charts-bar-horizontal-stacked
                     [view]="view"
@@ -195,9 +133,9 @@
     <div class="col-4">
         <div class="chart-div stacked-chart">
             <div class="chart-heading">
-                E-mail Blacklist
+                E-mail Blacklist (469)
             </div>
-            <div class="chart-parent" style="height:50px">
+            <div class="chart-parent no-legend-label no-margin-legend" style="height:50px">
                 <!-- EMAIL Blacklist -->       
                 <ngx-charts-bar-horizontal-stacked
                     [view]="view"
@@ -215,9 +153,9 @@
     <div class="col-4">
         <div class="chart-div stacked-chart">
             <div class="chart-heading">
-                DNS Blacklist
+                DNS Blacklist (4)
             </div>
-            <div class="chart-parent" style="height:50px">
+            <div class="chart-parent no-legend-label no-margin-legend" style="height:50px">
                 <!-- DNS Blacklist -->       
                 <ngx-charts-bar-horizontal-stacked
                     [view]="view"
@@ -240,7 +178,7 @@
             <div class="chart-heading">
                 In/Out traffic
             </div>
-            <div class="chart-parent" style="height:250px">
+            <div class="chart-parent no-legend-label" style="height:250px">
                 <ngx-charts-area-chart
                 [view]="view"
                 [scheme]="colorSchemeTraffic"
@@ -255,7 +193,7 @@
                 [legend]="true">
               </ngx-charts-area-chart>
             </div>
-            <div class="legend-bottom-wrapper">
+            <div style="height:55px">
             </div>
         </div>
     </div>

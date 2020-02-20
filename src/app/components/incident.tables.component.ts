@@ -18,12 +18,22 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class IncidentsTableComponent {
 
+  threats: AlienvaultThreat[] = [];
+
+
   columnsToDisplay = ['id', 'subject', 'status', 'priority', 'updated'];
+  displayedColumnsThreats = ['name', 'created'];
   expandedElement: PeriodicElement;
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   dataSourceAssigned = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA_ASSIGNED);
-
+  dataSourceThreats = null;
+  
+  
    constructor(private dataService: DataService){
+    //AlienVaultThreats
+    this.dataService.getAlienVaultThreats().subscribe((value: AlienvaultThreat[]) => {
+      this.threats = value;
+    });
    }
 
    @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -31,6 +41,14 @@ export class IncidentsTableComponent {
    ngOnInit() {
     this.dataSource.paginator = this.paginator;
   }
+}
+
+export interface AlienvaultThreat {
+  id: string;
+  name: string;
+  description: string;
+  author: string;
+  created: string;
 }
 
 export interface Element {
