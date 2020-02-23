@@ -12,6 +12,10 @@ export const appRoutes: Routes = [
   {
     path: 'incidents-board',
     component: ContentComponent
+  },
+  {
+    path: 'cit-board',
+    component: CitComponent
   }
 ];
 
@@ -23,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { ContentComponent } from '../app/components/content.component';
 import { CisoComponent } from '../app/components/ciso.component';
+import { CitComponent } from '../app/cit-board/cit.component';
 import { IncidentsTableComponent } from '../app/components/incident.tables.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -34,7 +39,8 @@ import { DataService } from './services/data.service';
     AppComponent,
     ContentComponent,
     CisoComponent,
-    IncidentsTableComponent
+    IncidentsTableComponent,
+    CitComponent
   ],
   imports: [
     BrowserModule,
