@@ -24,6 +24,7 @@ export class IncidentsTableComponent {
   columnsToDisplay = ['id', 'subject', 'status', 'priority', 'updated'];
   displayedColumnsThreats = ['name', 'created'];
   expandedElement: PeriodicElement;
+  expandedElementThreat: AlienvaultThreat;
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   dataSourceAssigned = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA_ASSIGNED);
   dataSourceThreats = null;

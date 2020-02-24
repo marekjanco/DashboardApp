@@ -73,15 +73,15 @@
         "name": "Incidents by priority",
         "series": [
           {
-            "name": "Critical - 9",
+            "name": "9: Critical",
             "value": 9
           },
           {
-              "name": "Medium - 16",
+              "name": "16: Medium",
               "value": 16
           },
           {
-              "name": "Low - 6",
+              "name": "6: Low",
               "value": 6
           }
         ]
@@ -92,15 +92,15 @@
         "name": "Incidents assigned",
         "series": [
           {
-            "name": "Critical - 1",
+            "name": "1: Critical",
             "value": 1
           },
           {
-              "name": "Medium - 3",
+              "name": "3: Medium",
               "value": 3
           },
           {
-              "name": "Low - 5",
+              "name": "5: Low",
               "value": 5
           }
         ]
@@ -111,15 +111,15 @@
         "name": "IP blacklist",
         "series": [
           {
-              "name": "Telnet - 856",
+              "name": "856: Telnet",
               "value": 856
           },
           {
-              "name": "Scan detection - 5094",
+              "name": "5094: Scan detection",
               "value": 5094
           },
           {
-              "name": "Word - 352",
+              "name": "352: Word",
               "value": 352
           }
         ]
@@ -130,15 +130,15 @@
         "name": "Email blacklist",
         "series": [
           {
-            "name": "Connect - 136",
+            "name": "136: Connect",
             "value": 136
           },
           {
-              "name": "To - 67",
+              "name": "67: To",
               "value": 67
           },
           {
-              "name": "From - 266",
+              "name": "266: From",
               "value": 266
           }
         ]
@@ -149,15 +149,15 @@
         "name": "DNS blacklist",
         "series": [
           {
-            "name": "50.225.183.14 - 1",
+            "name": "1: 50.225.183.14",
             "value": 1
           },
           {
-              "name": "246.248.6.17 - 2",
+              "name": "2: 246.248.6.17",
               "value": 2
           },
           {
-              "name": "206.166.89.18 - 1",
+              "name": "1: 206.166.89.18",
               "value": 1
           }
         ]
