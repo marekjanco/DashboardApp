@@ -11,7 +11,7 @@ export const appRoutes: Routes = [
   },
   {
     path: 'incidents-board',
-    component: ContentComponent
+    component: HandlerComponent
   },
   {
     path: 'cit-board',
@@ -25,10 +25,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //COMPONENTS
 import { AppComponent } from './app.component';
-import { ContentComponent } from '../app/components/content.component';
-import { CisoComponent } from '../app/components/ciso.component';
+import { CisoComponent } from '../app/ciso-board/ciso.component';
 import { CitComponent } from '../app/cit-board/cit.component';
-import { IncidentsTableComponent } from '../app/components/incident.tables.component';
+import { HandlerComponent } from './ih-board/handler.component';
+import { HandlerTableComponent } from './ih-board/handler.tables.component';
+import { NumberCardComponent } from './shared-components/number.card';
 import { HttpClientModule } from '@angular/common/http';
 
 //SERVICES
@@ -37,10 +38,11 @@ import { DataService } from './services/data.service';
 @NgModule({
   declarations: [
     AppComponent,
-    ContentComponent,
+    HandlerComponent,
     CisoComponent,
-    IncidentsTableComponent,
-    CitComponent
+    HandlerTableComponent,
+    CitComponent,
+    NumberCardComponent
   ],
   imports: [
     BrowserModule,

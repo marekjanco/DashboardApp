@@ -1,0 +1,13 @@
+<div class="widget-class">
+    <div class="widget-icon">
+        <span class="lnr lnr-warning error-color" style="margin-bottom: 5px;"></span>
+    </div>
+    <div class="widget-content">
+        <div class="widget-number">{{numberCard.value}} 
+            <span class="badge" *ngIf="numberCard != null" [ngClass]="{'red-badge' : unresolvedIncidents.change.increase, 'green-badge' : !numberCard.change.increase}">
+                <span class="fa" [ngClass]="{'fa-caret-up' : unresolvedIncidents.change.increase, 'fa-caret-down' : !numberCard.change.increase}"></span> {{numberCard.change.value}} 
+            </span>
+        </div>
+        <div class="widget-subheading">{{numberCard.name}}</div>
+    </div>
+</div>

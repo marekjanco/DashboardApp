@@ -3,12 +3,16 @@
         <div class="chart-div">
             <div class="chart-parent" style="height:80px">
                 <div class="widget-class">
-                    <div class="widget-icon widget-offset" style="padding-left:10px;">
+                    <div class="widget-icon widget-offset">
                         <span class="lnr lnr-warning error-color" style="margin-bottom: 5px;"></span>
                     </div>
                     <div class="widget-content">
-                        <div class="widget-number">31 <span class="badge red-badge"><span class="fa fa-caret-up"></span> 10</span></div>
-                        <div class="widget-subheading">Unresolved incidents</div>
+                        <div class="widget-number">{{unresolvedIncidents.value}} 
+                            <span *ngIf="unresolvedIncidents.change != null"  class="badge" [ngClass]="{'red-badge' : unresolvedIncidents.change.increase, 'green-badge' : !unresolvedIncidents.change.increase}">
+                                <span class="fa" [ngClass]="{'fa-caret-up' : unresolvedIncidents.change.increase, 'fa-caret-down' : !unresolvedIncidents.change.increase}"></span> {{unresolvedIncidents.change.value}} 
+                            </span>
+                        </div>
+                        <div class="widget-subheading">{{unresolvedIncidents.name}}</div>
                     </div>
                 </div>
             </div>
@@ -22,8 +26,12 @@
                         <span class="lnr lnr-plus-circle" style="color: #59CBB3"></span>
                     </div>
                     <div class="widget-content">
-                        <div class="widget-number">6</div>
-                        <div class="widget-subheading">New incidents (Today)</div>
+                        <div class="widget-number">{{newIncidents.value}} 
+                            <span *ngIf="newIncidents.change != null" class="badge" [ngClass]="{'red-badge' : newIncidents.change.increase, 'green-badge' : !newIncidents.change.increase}">
+                                <span class="fa" [ngClass]="{'fa-caret-up' : newIncidents.change.increase, 'fa-caret-down' : !newIncidents.change.increase}"></span> {{newIncidentsnewIncidents.change.value}} 
+                            </span>
+                        </div>
+                        <div class="widget-subheading">{{newIncidents.name}}</div>
                     </div>
                 </div>
             </div>
@@ -36,8 +44,12 @@
                         <span class="lnr lnr-hand warning-color"></span>
                     </div>
                     <div class="widget-content">
-                        <div class="widget-number">15</div>
-                        <div class="widget-subheading">Untouched incidents</div>
+                        <div class="widget-number">{{untouchedIncidents.value}} 
+                            <span *ngIf="untouchedIncidents.change != null" class="badge" [ngClass]="{'red-badge' : untouchedIncidents.change.increase, 'green-badge' : !untouchedIncidents.change.increase}">
+                                <span class="fa" [ngClass]="{'fa-caret-up' : untouchedIncidents.change.increase, 'fa-caret-down' : !untouchedIncidents.change.increase}"></span> {{untouchedIncidents.change.value}} 
+                            </span>
+                        </div>
+                        <div class="widget-subheading">{{untouchedIncidents.name}}</div>
                     </div>
                 </div>
             </div>
@@ -51,8 +63,12 @@
                         <span class="lnr lnr-tag" style="color: #7AA3E5"></span>
                     </div>
                     <div class="widget-content">
-                        <div class="widget-number">9  <span class="badge green-badge"><span class="fa fa-caret-down"></span> 2</span></div>
-                        <div class="widget-subheading">Incidents assigned to me</div>
+                        <div class="widget-number">{{assignedToMe.value}} 
+                            <span *ngIf="assignedToMe.change != null" class="badge" [ngClass]="{'red-badge' : assignedToMe.change.increase, 'green-badge' : !assignedToMe.change.increase}">
+                                <span class="fa" [ngClass]="{'fa-caret-up' : assignedToMe.change.increase, 'fa-caret-down' : !assignedToMe.change.increase}"></span> {{assignedToMe.change.value}} 
+                            </span>
+                        </div>
+                        <div class="widget-subheading">{{assignedToMe.name}}</div>
                     </div>
                 </div>
             </div>
@@ -65,13 +81,13 @@
     <div class="col-6">  
         <div class="chart-div stacked-chart">
             <div class="chart-heading pie-chart-header">
-                <span style="padding-left: 15px;"><strong>31: </strong> All Incidents by priority</span>
+                <span style="padding-left: 15px;">{{incidentsByPriority.name}} ({{incidentsByPriority.length}})</span>
             </div>
             <div class="chart-parent no-legend-label no-margin-legend" style="height:50px">
                 <ngx-charts-bar-horizontal-stacked
                     [view]="view"
                     [scheme]="incidentsEasyColorScheme"
-                    [results]="incidentsByPriority"
+                    [results]="incidentsByPriority.series"
                     [legend]="true"
                     [legendPosition]="'below'"
                     [gradient]="false">
@@ -84,13 +100,13 @@
     <div class="col-6">  
         <div class="chart-div stacked-chart">
             <div class="chart-heading pie-chart-header">
-                <span style="padding-left: 15px;"><strong>9: </strong> Incidents assigned to me</span>
+                <span style="padding-left: 15px;">{{incidentsAssignedToMe.name}} ({{incidentsAssignedToMe.length}})</span>
             </div>
             <div class="chart-parent no-legend-label no-margin-legend" style="height:50px">
                 <ngx-charts-bar-horizontal-stacked
                     [view]="view"
                     [scheme]="incidentsEasyColorScheme"
-                    [results]="incidentsAssignedToMe"
+                    [results]="incidentsAssignedToMe.series"
                     [legend]="true"
                     [legendPosition]="'below'"
                     [gradient]="false">
@@ -102,5 +118,5 @@
     </div>
 </div>
 
-<incidents-table></incidents-table>
+<handler-tables></handler-tables>
     

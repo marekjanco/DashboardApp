@@ -1,4 +1,4 @@
-@import './content.component.scss';
+@import './../ih-board/handler.component.scss';
 @import './../app.component.scss';
 
 .traffic-light {
@@ -23,18 +23,18 @@
         }
     }
 }
-
 .light {
     width: 4em;
     height: 3.5em;
     background: #000;
     border-radius: 50%;
     margin: 1em auto;
-}
-
-.not-active {
     opacity: .1;
 }
+.light.active-light {
+    opacity: 1;
+}
+
 
 .legend-labels.horizontal-legend{
     width: 120px !important;;

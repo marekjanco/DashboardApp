@@ -184,3 +184,36 @@
 .ok-color {
     color: #59CBB3 !important;
 }
+
+
+
+.scrollbar {
+    background: #fff;
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .scrollbar-light {
+    scrollbar-color: #d4d4d4 #eaeaea;
+    scrollbar-width: thin;
+  }
+  .scrollbar-light::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+    background-color: red;
+  }
+  .scrollbar-light::-webkit-scrollbar-corner {
+    background: #eaeaea;
+  }
+  .scrollbar-light::-webkit-scrollbar-thumb {
+    background: #d4d4d4;
+    border: 1px solid #eaeaea;
+  }
+  .scrollbar-light::-webkit-scrollbar-thumb:hover {
+    background: #6e6e6e;
+  }
+  .scrollbar-light::-webkit-scrollbar-track {
+    border: 1px solid #eaeaea;
+    background-color: #eaeaea;
+  }  

@@ -1,8 +1,7 @@
 <div class="row">
-          
-    <div class="col-7">    
+    <div class="col-8">    
         <div class="chart-div">
-            <div class="chart-parent row" style="height:105px;">
+            <div class="chart-parent row" style="height:80px;">
                 <div class="widget-class col-4">
                     <div class="widget-icon">
                         <span class="lnr lnr-warning error-color" style="margin-bottom: 5px;"></span>
@@ -27,7 +26,7 @@
                         <span class="lnr fa fa-plug" style="color: #7AA3E5"></span>
                         </div>
                         <div class="widget-content">
-                            <div class="widget-number">10  <span class="badge red-badge"><span class="fa fa-caret-up"></span> 2</span></div>
+                            <div class="widget-number">7  <span class="badge green-badge"><span class="fa fa-caret-down"></span> 2</span></div>
                             <div class="widget-subheading">Open ports</div>
                         </div>
                     </div>
@@ -36,79 +35,82 @@
         </div>
         <div>
             <div class="chart-div">
-                <div class="chart-heading">
-                    Vulnerabilities by common ports
-                </div>
-                <div class="chart-parent" style="height:200px">
-                </div>
-                <div style="height:15px">
+                <div class="chart-parent" style="height:290px">
+                    <div class="example-table-container scrollbar scrollbar-light"  style="position: relative; width:100%; overflow-y: auto;">
+                        <table mat-table [dataSource]="dataSource" class="example-table"  style="position: relative; width:100%;">
+                            <!-- Number Column -->
+                            <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef>#</th>
+                            <td mat-cell *matCellDef="let row">{{row.id}}</td>
+                            </ng-container>
+                    
+                            <!-- Subject Column -->
+                            <ng-container matColumnDef="subject">
+                            <th mat-header-cell *matHeaderCellDef>Subject</th>
+                            <td mat-cell *matCellDef="let row">{{row.subject}}</td>
+                            </ng-container>
+                            
+                            <!-- Priority Column -->
+                            <ng-container matColumnDef="priority">
+                                <th mat-header-cell *matHeaderCellDef>Priority</th>
+                                <td mat-cell *matCellDef="let row"
+                                [ngClass]="{
+                                    'error-color' : row.priority == 'critical',
+                                    'warning-color' : row.priority == 'medium',
+                                    'ok-color' : row.priority == 'low'
+                                }">
+                                <span *ngIf="row.priority == 'critical'" class="lnr lnr-cross-circle"></span>
+                                <span *ngIf="row.priority == 'medium'" class="lnr lnr-warning"></span>
+                                <span *ngIf="row.priority == 'low'" class="lnr lnr-arrow-down"></span>
+                                {{row.priority}}
+                                </td>
+                                </ng-container>
+                    
+                            <!-- Description Column -->
+                            <ng-container matColumnDef="description">
+                                <th mat-header-cell *matHeaderCellDef>Description</th>
+                                <td mat-cell *matCellDef="let row" style="width:60%">{{row.description | slice:0:120}}<span *ngIf="row.description.length > 120">...</span></td>
+                                </ng-container>
+        
+                    
+                            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                            <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="col-5">
-        <div class="chart-div">
+    
+    <div class="col-4">
+        <div class="chart-div stacked-chart">
             <div class="chart-parent" style="height:415px">
-                <div class="example-table-container"  style="position: relative; width:100%; overflow-y: scroll;">
-                <table mat-table [dataSource]="dataSource" class="example-table"  style="position: relative; width:100%;">
-                    <!-- Number Column -->
-                    <ng-container matColumnDef="id">
-                    <th mat-header-cell *matHeaderCellDef>#</th>
-                    <td mat-cell *matCellDef="let row">{{row.id}}</td>
-                    </ng-container>
-            
-                    <!-- Subject Column -->
-                    <ng-container matColumnDef="subject">
-                    <th mat-header-cell *matHeaderCellDef>Subject</th>
-                    <td mat-cell *matCellDef="let row">{{row.subject}}</td>
-                    </ng-container>
-                    
-                    <!-- Priority Column -->
-                    <ng-container matColumnDef="priority">
-                        <th mat-header-cell *matHeaderCellDef>Priority</th>
-                        <td mat-cell *matCellDef="let row"
-                        [ngClass]="{
-                            'error-color' : row.priority == 'critical',
-                            'warning-color' : row.priority == 'medium',
-                            'ok-color' : row.priority == 'low'
-                        }">
-                        <span *ngIf="row.priority == 'critical'" class="lnr lnr-cross-circle"></span>
-                        <span *ngIf="row.priority == 'medium'" class="lnr lnr-warning"></span>
-                        <span *ngIf="row.priority == 'low'" class="lnr lnr-arrow-down"></span>
-                        {{row.priority}}
-                        </td>
-                        </ng-container>
-            
-                    <!-- Description Column -->
-                    <ng-container matColumnDef="description">
-                        <th mat-header-cell *matHeaderCellDef>Description</th>
-                        <td mat-cell *matCellDef="let row">{{row.description | slice:0:65}}<span *ngIf="row.description.length > 65">...</span></td>
-                        </ng-container>
-
-            
-                    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-                    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
-                </table>
-                </div>
+                <!-- IP Blacklist -->   
+                <ngx-charts-tree-map id="treeMapContainer"
+                    [view]="view"
+                    [scheme]="'aqua'"
+                    [results]="treeMapData"
+                    [labelFormatting]="labelFormatting"
+                    (select)="treeMapChoose($event)">
+                </ngx-charts-tree-map> 
             </div>
         </div>
     </div>
 </div>
 
 <div class="row">
-
     <div class="col-4">
         <div class="chart-div stacked-chart">
             <div class="chart-heading">
-                <strong>6302: </strong> IP Blacklist
+                <span style="padding-left: 15px;">{{ipBlacklist.name}} ({{ipBlacklist.length}})</span>
             </div>
             <div class="chart-parent no-legend-label no-margin-legend" style="height:50px">
                 <!-- IP Blacklist -->   
                 <ngx-charts-bar-horizontal-stacked
                     [view]="view"
                     [scheme]="IPColorScheme"
-                    [results]="IpBlacklist"
+                    [results]="ipBlacklist.series"
                     [legend]="true"
                     [legendPosition]="'below'"
                     [gradient]="false">
@@ -121,14 +123,14 @@
     <div class="col-4">
         <div class="chart-div stacked-chart">
             <div class="chart-heading">
-                <strong>469: </strong> E-mail Blacklist
+                <span style="padding-left: 15px;"> {{emailBlacklist.name}} ({{emailBlacklist.length}})</span>
             </div>
             <div class="chart-parent no-legend-label no-margin-legend" style="height:50px">
                 <!-- EMAIL Blacklist -->       
                 <ngx-charts-bar-horizontal-stacked
                     [view]="view"
                     [scheme]="EmailColorScheme"
-                    [results]="EmailBlacklist"
+                    [results]="emailBlacklist.series"
                     [legend]="true"
                     [legendPosition]="'below'"
                     [gradient]="false">
@@ -141,14 +143,14 @@
     <div class="col-4">
         <div class="chart-div stacked-chart">
             <div class="chart-heading">
-                <strong>4: </strong> DNS Blacklist
+                <span style="padding-left: 15px;">{{dnsBlacklist.name}} ({{dnsBlacklist.length}})</span>
             </div>
             <div class="chart-parent no-legend-label no-margin-legend" style="height:50px">
                 <!-- DNS Blacklist -->       
                 <ngx-charts-bar-horizontal-stacked
                     [view]="view"
                     [scheme]="DNSColorScheme"
-                    [results]="DnsBlacklist"
+                    [results]="dnsBlacklist.series"
                     [legend]="true"
                     [legendPosition]="'below'"
                     [gradient]="false">
@@ -158,11 +160,7 @@
             </div>
         </div>
     </div>
-
 </div>
-
-
-
 
 <div class="row">
     <div class="col-12">      
@@ -174,7 +172,7 @@
                 <ngx-charts-area-chart
                 [view]="view"
                 [scheme]="colorSchemeTraffic"
-                [results]="traffic"
+                [results]="traffic.series"
                 [xAxis]="true"
                 [yAxis]="true"
                 [showYAxisLabel]="true"

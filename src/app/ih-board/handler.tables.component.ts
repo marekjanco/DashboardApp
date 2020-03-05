@@ -3,11 +3,12 @@ import { DataService } from '../services/data.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import { AlienvaultThreat, Element } from '../objects-def/objects.def'
 
 @Component({
-  selector: 'incidents-table',
-  templateUrl: './incident.tables.component.html',
-  styleUrls: ['./incident.tables.component.scss'],
+  selector: 'handler-tables',
+  templateUrl: './handler.tables.component.html',
+  styleUrls: ['./handler.tables.component.scss'],
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({height: '0px', minHeight: '0', display: 'none'})),
@@ -16,17 +17,17 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
     ]),
   ],
 })
-export class IncidentsTableComponent {
+export class HandlerTableComponent {
 
   threats: AlienvaultThreat[] = [];
 
 
   columnsToDisplay = ['id', 'subject', 'status', 'priority', 'updated'];
-  displayedColumnsThreats = ['name', 'created'];
-  expandedElement: PeriodicElement;
+  columnsToDisplayThreats = ['name', 'created'];
+  expandedElement: Element;
   expandedElementThreat: AlienvaultThreat;
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  dataSourceAssigned = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA_ASSIGNED);
+  dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
+  dataSourceAssigned = new MatTableDataSource<Element>(ELEMENT_DATA_ASSIGNED);
   dataSourceThreats = null;
   
   
@@ -44,32 +45,7 @@ export class IncidentsTableComponent {
   }
 }
 
-export interface AlienvaultThreat {
-  id: string;
-  name: string;
-  description: string;
-  author: string;
-  created: string;
-}
-
-export interface Element {
-  id: number;
-  subject: string;
-  status: string;
-  priority: string;
-  updated: Date;
-}
-
-export interface PeriodicElement {
-  id: number;
-  subject: string;
-  status: string;
-  priority: string;
-  updated: Date;
-  description: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
+const ELEMENT_DATA: Element[] = [
   {id: 1, subject: 'Possible DoS', status: 'open', priority: 'medium', updated: new Date(), description: `Email was sent to customer on 12.1.2020.`},
   {id: 2, subject: 'Incident 1', status: 'resolved', priority: 'critical', updated: new Date(), description: `Email was sent to customer on 12.1.2020.`},
   {id: 3, subject: 'A problem', status:  'open', priority: 'low', updated: new Date(), description: `Email was sent to customer on 12.1.2020.`},
@@ -81,7 +57,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {id: 9, subject: 'aaaaa', status: 'open', priority: 'critical', updated: new Date(), description: `Email was sent to customer on 12.1.2020.`},
 ];
 
-const ELEMENT_DATA_ASSIGNED: PeriodicElement[] = [
+const ELEMENT_DATA_ASSIGNED: Element[] = [
   {id: 31, subject: 'Incident 1', status: 'open', priority: 'medium', updated: new Date(), description: `Email was sent to customer on 12.1.2020.`},
   {id: 12, subject: 'Incident 2', status: 'resolved', priority: 'critical', updated: new Date(), description: `Email was sent to customer on 12.1.2020.`},
   {id: 14, subject: 'Incident 3', status:  'open', priority: 'low', updated: new Date(), description: `Email was sent to customer on 12.1.2020.`},
